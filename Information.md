@@ -3,17 +3,17 @@
 ## Mongodb database URL
 
 ```
-mongodb+srv://jobPortal:jobPortal@database.f2htg2a.mongodb.net/?retryWrites=true&w=majority&appName=database
+mongodb+srv://jobPortal:<password>@database.ozcdemr.mongodb.net/?retryWrites=true&w=majority&appName=database
 ```
 
 ## MongoShell
 
 ```
-mongosh "mongodb+srv://database.f2htg2a.mongodb.net/" --apiVersion 1 --username jobPortal
+mongosh "mongodb+srv://database.ozcdemr.mongodb.net/" --apiVersion 1 --username jobPortal
 ```
 
 ## Mongo Compass
 
 ```
-mongodb+srv://jobPortal:<password>@database.f2htg2a.mongodb.net/
+mongodb+srv://jobPortal:<password>@database.ozcdemr.mongodb.net/
 ```
