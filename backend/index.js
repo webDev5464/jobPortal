@@ -2,7 +2,9 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const app = express()
-
+const User = require('./Usermodel')
+app.use(cors())
+app.use(express.json())
 
 const mongodbCon = async (URL) => {
     await mongoose.connect(URL)
@@ -13,4 +15,4 @@ mongodbCon("mongodb+srv://jobPortal:jobPortal@database.f2htg2a.mongodb.net/?retr
 
 app.use(express.json())
 app.use(cors())
-app.listen(5500, () => console.log('port is running on 5500'))
+app.listen(5500,() => console.log('port is running on 5500'))
