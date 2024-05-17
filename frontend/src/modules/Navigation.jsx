@@ -8,15 +8,15 @@ const Navigation = () => {
       <div className="flex  justify-center items-center">
         <div className="flex flex-1">
           <img
-            src={navigationlogo}
-            className="w-[150px] "
-            alt="founditLogo.png"
-          />
+              src={navigationlogo}
+              className="w-[150px] "
+              alt="founditLogo.png"
+            />
         </div>
         <div className="flex flex-1  ">
           <ul className="flex ">
             <li className="mx-2">
-              <NavLink>Jobs</NavLink>
+              <NavLink to={'jobs'}>Jobs</NavLink>
             </li>
             <li className="mx-2">
               <NavLink>Prep</NavLink>
@@ -33,12 +33,16 @@ const Navigation = () => {
           </ul>
         </div>
         <div className="m-[10px] ">
-          <button className=" mx-1 p-1 w-20 border-none bg-blue-500 font-bold text-white rounded-2xl">
-            Login
-          </button>
-          <button className="mx-1 p-1 w-20 border-none bg-orange-500 font-bold text-white rounded-2xl">
-            Register
-          </button>
+          <NavLink to={'login'}>
+            <button className=" mx-1 p-1 w-20 border-none bg-blue-500 font-bold text-white rounded-2xl">
+              Login
+            </button>
+          </NavLink>
+          <NavLink to={'register'}>
+            <button className="mx-1 p-1 w-20 border-none bg-orange-500 font-bold text-white rounded-2xl">
+              Register
+            </button>
+          </NavLink>
         </div>
       </div>
     </section>
