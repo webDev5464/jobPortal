@@ -4,6 +4,7 @@ import UserLayout from './components/layouts/UserLayout'
 import AdminLayout from './components/layouts/AdminLayout'
 import EmployerLayout from './components/layouts/EmployerLayout'
 export default function App() {
+
   let router = createBrowserRouter([
     {
       path: '/',

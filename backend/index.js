@@ -22,8 +22,8 @@ app.use((err, req, res, next) => {
     });
 });
 
+
 mongodbCon("mongodb://127.0.0.1:27017/jobportal")
-// mongodb+srv://jobPortal:jobPortal@database.ozcdemr.mongodb.net/?retryWrites=true&w=majority&appName=database
 
 
 // mongodbCon("mongodb+srv://jobPortal:jobPortal@database.ozcdemr.mongodb.net/?retryWrites=true&w=majority&appName=database")
