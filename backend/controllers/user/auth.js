@@ -1,6 +1,8 @@
 const jwt = require('jsonwebtoken');
 const User = require('../../models/Usermodel');
 const ErrorHandler = require('../../middleware/errorHandler');
+const sendMail = require('../../configs/nodeMailer');
+const otpGenerator = require('otp-generator');
 
 const validateFields = (fields) => {
     for (const [key, value] of Object.entries(fields)) {
@@ -72,7 +74,7 @@ const LoginUser = async (req, res, next) => {
         }
 
         // Generate JWT token for authentication
-        const token = jwt.sign({ userId: user._id }, 'jatinisbestcoderintheworld', { expiresIn: '1m' });
+        const token = jwt.sign({ userId: user._id }, 'jatinisbestcoderintheworld', { expiresIn: '1h' });
 
         return res.status(200)
             .cookie('token', token, { maxAge: 60000, httpOnly: true }) // Set cookie with token
@@ -83,8 +85,108 @@ const LoginUser = async (req, res, next) => {
     }
 };
 
-const checkAuth = (req, res, next) => {
-    next(new ErrorHandler("jatin's error!", 500));
+
+
+const otpStore = new Map();
+
+const forgotPassword = async (req, res, next) => {
+    try {
+        const { email } = req.body;
+
+        // Validate email
+        if (!email) {
+            throw new ErrorHandler('Email is required', 400);
+        }
+
+        // Find user by email
+        const user = await User.findOne({ email });
+        if (!user) {
+            throw new ErrorHandler('User not found', 404);
+        }
+
+        // Generate OTP
+        const otp = otpGenerator.generate(6, { digits: true, lowerCaseAlphabets: false, upperCaseAlphabets: false, specialChars: false });
+
+        // Store OTP temporarily (in a real application, consider using a database with expiry)
+        otpStore.set(email, otp);
+        setTimeout(() => otpStore.delete(email), 10 * 60 * 1000); // OTP valid for 10 minutes
+
+        // Send OTP to user's email
+        await sendMail(email, 'Password Reset OTP', `Your OTP is: ${otp}`);
+
+        res.status(200).json({ success: true, message: 'OTP sent to email' });
+    } catch (error) {
+        next(error);
+    }
 };
 
-module.exports = { checkAuth, RegisterUser, LoginUser };
+const verifyOtpAndResetPassword = async (req, res, next) => {
+    try {
+        const { email, otp, newPassword } = req.body;
+
+        // Validate inputs
+        if (!email || !otp || !newPassword) {
+            throw new ErrorHandler('Email, OTP, and new password are required', 400);
+        }
+
+        // Check if OTP is valid
+        const storedOtp = otpStore.get(email);
+        if (!storedOtp || storedOtp !== otp) {
+            throw new ErrorHandler('Invalid or expired OTP', 400);
+        }
+
+        // Find user by email
+        const user = await User.findOne({ email });
+        if (!user) {
+            throw new ErrorHandler('User not found', 404);
+        }
+
+        // Hash new password and update user record
+        user.password = newPassword;
+        await user.save();
+
+        // Remove OTP from store
+        otpStore.delete(email);
+
+        res.status(200).json({ success: true, message: 'Password reset successfully' });
+    } catch (error) {
+        next(error);
+    }
+};
+
+const changePassword = async (req, res, next) => {
+    try {
+        const { currentPassword, newPassword } = req.body;
+
+        // Validate inputs
+        if (!currentPassword || !newPassword) {
+            throw new ErrorHandler('Current password and new password are required', 400);
+        }
+
+        // Get the user from the request (assumes user is authenticated and user object is attached to the request)
+        const user = req.user;
+
+        // Compare current password with the stored password
+        const isPasswordValid = await user.comparePassword(currentPassword);
+        if (!isPasswordValid) {
+            throw new ErrorHandler('Current password is incorrect', 401);
+        }
+
+        // Set new password
+        user.password = newPassword;
+
+        // Save the updated user object
+        await user.save();
+
+        res.status(200).json({ success: true, message: 'Password changed successfully' });
+    } catch (error) {
+        next(error);
+    }
+};
+
+const checkAuth = (req, res, next) => {
+    console.log(req.user);
+    res.send(req.user)
+};
+
+module.exports = { checkAuth, RegisterUser, changePassword, LoginUser, forgotPassword, verifyOtpAndResetPassword };
