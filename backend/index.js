@@ -2,11 +2,11 @@ const express = require('express')
 const cors = require('cors')
 const { mongodbCon } = require('./configs/dbCon')
 const userRoutes = require('./routes/userRoutes')
+
 const app = express()
 app.use(cors())
 app.use(express.json())
 var cookies = require("cookie-parser");
-
 app.use(cookies());
 
 app.use('/api/user', userRoutes)
@@ -18,13 +18,10 @@ app.use((err, req, res, next) => {
         status: err.status,
         message: err.message,
         success: false
-
     });
 });
 
-
 mongodbCon("mongodb://127.0.0.1:27017/jobportal")
-
 
 // mongodbCon("mongodb+srv://jobPortal:jobPortal@database.ozcdemr.mongodb.net/?retryWrites=true&w=majority&appName=database")
 
