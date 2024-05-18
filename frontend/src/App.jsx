@@ -1,18 +1,23 @@
-import React from "react";
-import Navbar from "./component/Navbar";
-import { Route, Routes } from "react-router-dom";
-import Login from "./component/Login";
+import React from 'react'
 import './index.css'
+import Navigation from './modules/Navigation'
+import Loging from './Component/Loging'
+import { Route, Routes } from 'react-router-dom'
+import Register from './Component/Register'
+import Jobs from './Component/Jobs'
+
 
 const App = () => {
   return (
     <>
+      <Navigation />
       <Routes>
-        <Route path="/" element={<Navbar />} />
-        <Route path="login" element={<Login />} />
+        <Route path='jobs' element={<Jobs/>}></Route>
+        <Route path='login' element={<Loging />}> </Route>
+        <Route path='register' element={<Register/>}></Route>
       </Routes>
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App
