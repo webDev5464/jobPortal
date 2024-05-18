@@ -21,12 +21,7 @@ app.use((err, req, res, next) => {
 
     });
 });
-<<<<<<< HEAD
-;
-mongodbCon("mongodb://127.0.0.1:27017/jobportal")
-// mongodb+srv://jobPortal:jobPortal@database.ozcdemr.mongodb.net/?retryWrites=true&w=majority&appName=database
-=======
 
-mongodbCon("mongodb+srv://jobPortal:jobPortal@database.ozcdemr.mongodb.net/?retryWrites=true&w=majority&appName=database")
->>>>>>> 896e88537ed3e2575888b986bac46490bd01c533
+mongodbCon("mongodb://127.0.0.1:27017/jobportal")
+
 app.listen(5500, () => console.log('port is running on 5500'))
