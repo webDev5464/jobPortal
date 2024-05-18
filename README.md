@@ -19,3 +19,9 @@
 # Information
 
 * [Refrance-Link](https://maxnewgen.in)
+
+***
+***
+***
+
+<p align="center"><a href="./LICENSE">Copyright (c) 2024 Dev_eLoper</a></p>
