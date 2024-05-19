@@ -4,9 +4,18 @@ const bcrypt = require('bcrypt');
 
 // Define the user schema
 const userSchema = new Schema({
-    fullName: {
+    firstName: {
         type: String,
         required: true
+    },
+    lastName: {
+        type: String,
+        required: true
+    },
+    userName: {
+        type: String,
+        required: true,
+        unique: true
     },
     email: {
         type: String,
@@ -23,8 +32,7 @@ const userSchema = new Schema({
         unique: true
     },
     location: {
-        type: String,
-
+        type: String
     },
     resume: {
         type: String // You can store the file path if you're saving resumes on the server
