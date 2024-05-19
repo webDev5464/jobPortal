@@ -14,10 +14,14 @@ const validateFields = (fields) => {
 
 const RegisterUser = async (req, res, next) => {
     try {
-        const { fullName, email, password, phoneNumber } = req.body;
+        const { firstName, lastName, userName, email, password, confirmPassword, phoneNumber } = req.body;
 
         // Validate the incoming data
-        validateFields({ fullName, email, password, phoneNumber });
+        validateFields({ firstName, lastName, userName, email, password, confirmPassword, phoneNumber });
+
+        if (password !== confirmPassword) {
+            throw new ErrorHandler('Passwords do not match', 400);
+        }
 
         // Validate email format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -31,15 +35,17 @@ const RegisterUser = async (req, res, next) => {
             throw new ErrorHandler('Invalid phone number', 400);
         }
 
-        // Check if user already exists with the provided email or phone number
-        const existingUser = await User.findOne({ $or: [{ email }, { phoneNumber }] });
+        // Check if user already exists with the provided email, phone number, or username
+        const existingUser = await User.findOne({ $or: [{ email }, { phoneNumber }, { userName }] });
         if (existingUser) {
             throw new ErrorHandler('User already exists', 409);
         }
 
         // Create a new user instance
         const newUser = new User({
-            fullName,
+            firstName,
+            lastName,
+            userName,
             email,
             password,
             phoneNumber
@@ -74,18 +80,16 @@ const LoginUser = async (req, res, next) => {
         }
 
         // Generate JWT token for authentication
-        const token = jwt.sign({ userId: user._id }, 'jatinisbestcoderintheworld', { expiresIn: '1h' });
+        const token = jwt.sign({ userId: user._id }, 'jatinisbestcoderintheworld', { expiresIn: '1m' });
 
         return res.status(200)
             .cookie('token', token, { maxAge: 60000, httpOnly: true }) // Set cookie with token
-            .json({ token, success: true }); // Send token in the response body
+            .json({ success: true, token }); // Send token in the response body
 
     } catch (error) {
         next(error); // Pass errors to custom error handler
     }
 };
-
-
 
 const otpStore = new Map();
 
@@ -125,9 +129,7 @@ const verifyOtpAndResetPassword = async (req, res, next) => {
         const { email, otp, newPassword } = req.body;
 
         // Validate inputs
-        if (!email || !otp || !newPassword) {
-            throw new ErrorHandler('Email, OTP, and new password are required', 400);
-        }
+        validateFields({ email, otp, newPassword });
 
         // Check if OTP is valid
         const storedOtp = otpStore.get(email);
@@ -159,9 +161,7 @@ const changePassword = async (req, res, next) => {
         const { currentPassword, newPassword } = req.body;
 
         // Validate inputs
-        if (!currentPassword || !newPassword) {
-            throw new ErrorHandler('Current password and new password are required', 400);
-        }
+        validateFields({ currentPassword, newPassword });
 
         // Get the user from the request (assumes user is authenticated and user object is attached to the request)
         const user = req.user;
@@ -185,8 +185,7 @@ const changePassword = async (req, res, next) => {
 };
 
 const checkAuth = (req, res, next) => {
-    console.log(req.user);
-    res.send(req.user)
+    res.status(200).json({ success: true, user: req.user });
 };
 
 module.exports = { checkAuth, RegisterUser, changePassword, LoginUser, forgotPassword, verifyOtpAndResetPassword };
