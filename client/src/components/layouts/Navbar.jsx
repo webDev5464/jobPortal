@@ -13,7 +13,7 @@ import Register from '../user/Regitser'
 // import { FaOpencart } from "react-icons/fa6";
 
 const Navbar = () => {
-    let [regForm, setRegForm] = useState(true)
+    let [regForm, setRegForm] = useState(false) // Change state by Deven sir
     const [isSidebarOpen, setMenu] = useState(false)
     return (
         <main>
