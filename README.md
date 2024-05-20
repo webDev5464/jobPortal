@@ -2,10 +2,11 @@
 
 ### Client side :
 
-* Navigation
-* Home page
-* Register
-* Login
+- Kalpesh :- general home page.
+- Manan :- Navigation
+- vishrut :- footer
+- Syamal :- post new job page.
+- dip :- Job listing
 
 ### Backend Side :
 
