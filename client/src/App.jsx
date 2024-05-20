@@ -4,6 +4,7 @@ import UserLayout from './components/layouts/UserLayout'
 import AdminLayout from './components/layouts/AdminLayout'
 import EmployerLayout from './components/layouts/EmployerLayout'
 import Register from './components/layouts/Register'
+import Loging from './components/Loging'
 import Navbar from './components/layouts/Navbar'
 import Home from './components/Home'
 import Employers from './components/layouts/Employers'
@@ -94,6 +95,13 @@ export default function App() {
         {
           path: 'register',
           element: <Register />,
+          children: [
+
+          ]
+        },
+        {
+          path: 'loging',
+          element: <Loging />,
           children: [
 
           ]
