@@ -27,9 +27,8 @@ const CandidateReg = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-   
+        console.log(formData)
         dispatch(registerUser(formData));
-       
     };
 
     return (
