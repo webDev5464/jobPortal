@@ -22,15 +22,9 @@ export default function App() {
       path: '/',
       element: <RouterLayout />,
       children: [
+       
         {
           path: '/',
-          element: <Navbar />,
-          children: [
-
-          ]
-        },
-        {
-          path: 'Home',
           element: <Home />,
           children: [
 

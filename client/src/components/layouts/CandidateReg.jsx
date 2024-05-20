@@ -34,86 +34,86 @@ const CandidateReg = () => {
     return (
         <form onSubmit={handleSubmit} className="candidateform mt-5 mx-10">
             <div className="form 2xl:inline-flex xl:inline-flex lg:inline-flex md:inline-flex justify-between items-center gap-14">
-                <div>
-                    <label className='text-gray' htmlFor="firstName">First Name : *</label><br />
+                <div className='w-full'>
+                    <label className='text-gray' htmlFor="firstName">First Name : *</label>
                     <input
                         type="text"
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleChange}
                         required
-                        className='border w-[120%] px-4 py-1 outline-none border-gray focus:border-primary '
+                        className='border w-full px-4 py-1 outline-none border-gray focus:border-primary '
                         placeholder='Enter Firstname...'
                     />
                 </div>
-                <div>
-                    <label className='text-gray' htmlFor="lastName">Last Name : *</label><br />
+                <div className='w-full'>
+                    <label className='text-gray' htmlFor="lastName">Last Name : *</label>
                     <input
                         type="text"
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
                         required
-                        className='border w-[120%] px-4 py-1 outline-none border-gray  focus:border-primary'
+                        className='border w-full px-4 py-1 outline-none border-gray  focus:border-primary'
                         placeholder='Enter Lastname...'
                     />
                 </div>
             </div>
-            <div className="form1 2xl:inline-flex xl:inline-flex lg:inline-flex md:inline-flex justify-between items-center gap-14 mt-5 sm:mt-2">
-                <div>
-                    <label className='text-gray' htmlFor="userName">Username : *</label><br />
+            <div className="form1 w-full 2xl:inline-flex xl:inline-flex lg:inline-flex md:inline-flex justify-between items-center gap-14 mt-5 sm:mt-2">
+                <div className='w-full'>
+                    <label className='text-gray' htmlFor="userName">Username : *</label>
                     <input
                         type="text"
                         name="userName"
                         value={formData.userName}
                         onChange={handleChange}
                         required
-                        className='border w-[120%] px-4 py-1 outline-none border-gray focus:border-primary '
+                        className='border w-full px-4 py-1 outline-none border-gray focus:border-primary '
                         placeholder='Enter Username...'
                     />
                 </div>
-                <div>
-                    <label className='text-gray' htmlFor="email">Email : *</label><br />
+                <div className='w-full'>
+                    <label className='text-gray' htmlFor="email">Email : *</label>
                     <input
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className='border w-[120%] px-4 py-1 outline-none border-gray  focus:border-primary'
+                        className='border w-full px-4 py-1 outline-none border-gray  focus:border-primary'
                         placeholder='Enter Email...'
                     />
                 </div>
             </div>
             <div className="form2 2xl:inline-flex xl:inline-flex lg:inline-flex md:inline-flex justify-between items-center gap-14 mt-5 sm:mt-2">
-                <div>
-                    <label className='text-gray' htmlFor="password">Password : *</label><br />
+                <div className='w-full'>
+                    <label className='text-gray' htmlFor="password">Password : *</label>
                     <input
                         type="password"
                         name="password"
                         value={formData.password}
                         onChange={handleChange}
                         required
-                        className='border w-[120%] px-4 py-1 outline-none border-gray focus:border-primary '
+                        className='border w-full px-4 py-1 outline-none border-gray focus:border-primary '
                         placeholder='Enter Password...'
                     />
                 </div>
-                <div>
-                    <label className='text-gray' htmlFor="confirmPassword">Confirm Password : *</label><br />
+                <div className='w-full'>
+                    <label className='text-gray' htmlFor="confirmPassword">Confirm Password : *</label>
                     <input
                         type="password"
                         name="confirmPassword"
                         value={formData.confirmPassword}
                         onChange={handleChange}
                         required
-                        className='border w-[120%] px-4 py-1 outline-none border-gray  focus:border-primary'
+                        className='border w-full px-4 py-1 outline-none border-gray  focus:border-primary'
                         placeholder='Enter Confirm Password...'
                     />
                 </div>
             </div>
             <div className="form3 mt-5 sm:mt-2">
-                <div>
-                    <label className='text-gray' htmlFor="phoneNumber">Phone No. : *</label><br />
+                <div className='w-full'>
+                    <label className='text-gray' htmlFor="phoneNumber">Phone No. : *</label>
                     <input
                         type="tel"
                         name="phoneNumber"
@@ -121,7 +121,7 @@ const CandidateReg = () => {
                         onChange={handleChange}
                         required
                         pattern='[0-9]{10}'
-                        className='border xl:w-[35vw] sm:w-[33vw] px-4 py-1 outline-none border-gray focus:border-primary '
+                        className='border w-full  px-4 py-1 outline-none border-gray focus:border-primary '
                         placeholder='Enter Phone No...'
                     />
                 </div>
