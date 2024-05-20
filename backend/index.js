@@ -8,6 +8,9 @@ const cookies = require('cookie-parser');
 // Create an instance of Express
 const app = express();
 
+// extended: true allows for rich objects and arrays to be encoded into the URL-encoded format
+app.use(express.urlencoded({ extended: true }))
+
 // Use CORS middleware to allow cross-origin requests
 app.use(cors());
 

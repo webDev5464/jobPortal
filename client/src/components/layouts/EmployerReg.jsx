@@ -1,10 +1,8 @@
-import React from 'react'
-
 const EmployerReg = () => {
     return (
         <>
             <form className="candidateform mt-5 mx-10">
-            <div className="form 2xl:inline-flex xl:inline-flex lg:inline-flex md:inline-flex justify-between items-center gap-14">
+                <div className="form 2xl:inline-flex xl:inline-flex lg:inline-flex md:inline-flex justify-between items-center gap-14">
                     <div>
                         <label className='text-gray' htmlFor="firstName">First Name : *</label><br />
                         <input type="text" required className='border w-[120%] px-4 py-1 outline-none border-gray focus:border-primary ' placeholder='Enter Firstname...' />

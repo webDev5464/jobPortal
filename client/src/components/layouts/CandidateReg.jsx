@@ -56,9 +56,9 @@ const CandidateReg = () => {
                 </div>
             </form>
             <div className='flex mt-4 sm:mt-3'>
-                <div class="inline-flex items-center justify-center w-full">
-                    <hr class="w-[90%] h-[1%] my-2 bg-red-400 border-0 rounded" />
-                    <div class="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900">
+                <div className="inline-flex items-center justify-center w-full">
+                    <hr className="w-[90%] h-[1%] my-2 bg-red-400 border-0 rounded" />
+                    <div className="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900">
                         <p className='text-primary text-sm'>Or Sign in With</p>
                     </div>
                 </div>
