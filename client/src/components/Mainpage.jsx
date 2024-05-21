@@ -92,7 +92,7 @@ const Mainpage = () => {
                 <div id='search-job-contain' className='flex justify-evenly items-center bg-sky-300 h-[600px] p-[50px] '>
                     <div className='w-fit '>
                         <div className='font-bold text-[25px]'>MILLIONS OF JOBS.</div>
-                           <div className='font-bold text-[25px]'> FIND THE ONE THAT’S RIGHT FOR YOU.</div>
+                        <div className='font-bold text-[25px]'> FIND THE ONE THAT’S RIGHT FOR YOU.</div>
                         <p className='w-[500px] mt-3'>Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 600,000 companies worldwide. The right job is out there.</p>
                         <div className='bg-orange-300 p-2 rounded-md w-fit mt-5 text-white font-bold'>SEARCH JOBS</div>
                     </div>
@@ -104,32 +104,74 @@ const Mainpage = () => {
                     <p>A better career is out there. We'll help you find it. We're your first step to becoming everything you want to be.
 
                     </p>
-                   <div>
-                   <div className='flex'><span className='font-bold'>No Record,</span>
-                        <p className='ml-2'>Sorry!  Does not match record with your keyword
-                        Change your filter keywords to re-submit
-                        OR</p></div>
-                    <div className='bg-red-800 text-white p-2 rounded-md w-fit mt-5 font-bold'>RESET FILTERS</div>
-                   </div>
+                    <div>
+                        <div className='flex'><span className='font-bold'>No Record,</span>
+                            <p className='ml-2'>Sorry!  Does not match record with your keyword
+                                Change your filter keywords to re-submit
+                                OR</p></div>
+                        <div className='bg-red-800 text-white p-2 rounded-md w-fit mt-5 font-bold'>RESET FILTERS</div>
+
+                    </div>
 
                 </div>
 
-            </section>
-            <div>
-                {/* import { VscGraph } from "react-icons/vsc";
+                <div id='swipe-contain' className='h-[400px] bg-emerald-300 flex'>
+                    <div className='bg-amber-700 h-[400px] w-[700px]'></div>
 
-            <FaRegHospital />
+                    <div className='flex flex-col justify-center items-center  ml-[100px] p-10  bg-slate-300'>
+                        <p className='w-[500px] text-3xl'>I just got a job that I applied for via career-fy! I used the site all the time during my job hunt.</p>
+                        <div className='border-[1px] w-[400px] mt-4'></div>
+                        <div className='flex flex-col justify-items-end text-right  w-[400px] mt-4'>
+                        <div className='font-bold'>Richard Anderson</div>
+                        <div className='text-zinc-500'>Nevada, USA</div>
+                        </div>
 
-            <LuRadioTower />
+                    </div>
+                </div>
 
-            <HiOutlineClipboardDocumentList />
 
-            <IoCarSport />
+            <div id='blog-contain' className='bg-indigo-400 h-[600px] flex flex-col justify-center items-center'>
+                <div className='font-bold text-3xl'>FROM OUR BLOG</div>
+                <p>A better career is out there. We'll help you find it. We're your first step to becoming everything you want to be.</p>
 
-            <SlGraph />
+                <div className='flex justify-evenly items-center w-full p-10' >
 
-            <VscGraph /> */}
+                    <div className='w-[300px] h-[400px] bg-orange-300'>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div className='flex justify-center items-center bg-sky-300 text-white p-[10px] font-bold rounded-md w-[220px] border-2 flex '>READ ARTICLES</div>
+                    </div>
+                    <div className='w-[300px] h-[400px] bg-orange-300'>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div className='flex justify-center items-center bg-sky-300 text-white p-[10px] font-bold rounded-md w-[220px] border-2 '>READ ARTICLES</div>
+                    </div>
+                    <div className='w-[300px] h-[400px] bg-orange-300'>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div className='flex justify-center items-center bg-sky-300 text-white p-[10px] font-bold rounded-md w-[220px] border-2 flex '>READ ARTICLES</div>
+                    </div>
+
+                </div>
+
             </div>
+
+            </section>
+
+
+            
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         </>
     )
