@@ -14,6 +14,7 @@ import Jobs from './Jobs'
 import Candidates from './components/layouts/Candidates'
 import Packages from './components/layouts/Packages'
 import Pages from './Pages'
+import Mainpage from './components/Mainpage'
 export default function App() {
 
   let router = createBrowserRouter([
@@ -101,7 +102,14 @@ export default function App() {
           children: [
 
           ]
-        }
+        },
+        {
+          path: 'mainPage',
+          element: <Mainpage />,
+          children: [
+
+          ]
+        },
       ]
     }
   ])
