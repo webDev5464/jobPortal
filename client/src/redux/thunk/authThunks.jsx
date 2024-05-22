@@ -18,19 +18,19 @@ export const registerUser = createAsyncThunk(
 export const loginUser = createAsyncThunk(
     'auth/loginUser',
     async (credentials, { rejectWithValue, dispatch }) => {
-      try {
-        const response = await axios.post('/api/user/login', credentials);
-        const token = response.data.token;
-  
-        // Dispatch verifyUser thunk with the token
-        dispatch(verifyUser(token));
-  
-        return { token };
-      } catch (error) {
-        return rejectWithValue(error.response.data);
-      }
+        try {
+            const response = await axios.post('/api/user/login', credentials);
+            const token = response.data.token;
+
+            // Dispatch verifyUser thunk with the token
+            dispatch(verifyUser(token));
+
+            return { token };
+        } catch (error) {
+            return rejectWithValue(error.response.data);
+        }
     }
-  );
+);
 export const verifyUser = createAsyncThunk(
     'auth/verifyUser',
     async (token, { rejectWithValue }) => {
@@ -46,3 +46,21 @@ export const verifyUser = createAsyncThunk(
         }
     }
 )
+
+
+export const logoutUser = createAsyncThunk(
+    'auth/logoutUser',
+    async (_, { rejectWithValue, dispatch }) => {
+        try {
+            const response = await axios.post('/api/user/logout', {}, {
+                withCredentials: true,
+            });
+            let token = response.data.token;
+            dispatch(verifyUser(token));
+
+            return response.data;
+        } catch (error) {
+            return rejectWithValue(error.response.data);
+        }
+    }
+);

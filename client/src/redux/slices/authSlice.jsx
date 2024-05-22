@@ -1,11 +1,12 @@
 // src/features/auth/authSlice.js
 import { createSlice } from '@reduxjs/toolkit';
-import { registerUser, loginUser, verifyUser } from '../thunk/authThunks';
+import { registerUser, loginUser, logoutUser, verifyUser } from '../thunk/authThunks';
 
 const initialState = {
     user: null,
     loading: false,
     error: null,
+    isAuth: false
 };
 
 const authSlice = createSlice({
@@ -49,10 +50,24 @@ const authSlice = createSlice({
             .addCase(verifyUser.fulfilled, (state, action) => {
                 state.loading = false;
                 state.user = action.payload.user;
+                state.isAuth = true
             })
             .addCase(verifyUser.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload.message;
+            }).addCase(logoutUser.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(logoutUser.fulfilled, (state) => {
+                state.loading = false;
+                state.user = null;
+                localStorage.removeItem('token');
+                state.isAuth = false
+            })
+            .addCase(logoutUser.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
             });
     },
 });

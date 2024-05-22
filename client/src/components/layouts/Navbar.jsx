@@ -14,8 +14,10 @@ import Login from '../Login';
 // import { FaOpencart } from "react-icons/fa6";
 
 const Navbar = () => {
+
     let [regForm, setRegForm] = useState(false)
     let [logForm, setLogForm] = useState(false)
+
     const [isSidebarOpen, setMenu] = useState(false)
     return (
         <main>

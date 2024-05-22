@@ -14,9 +14,13 @@ import Jobs from './Jobs'
 import Candidates from './components/layouts/Candidates'
 import Packages from './components/layouts/Packages'
 import Pages from './Pages'
+
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { verifyUser } from './redux/thunk/authThunks'
+
+import Mainpage from './components/Mainpage'
+
 export default function App() {
   const user = useSelector((state) => state.auth);
 
@@ -26,7 +30,7 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    console.log('jatin',user)
+    console.log('jatin', user)
   }, [user])
   let router = createBrowserRouter([
 
@@ -99,7 +103,31 @@ export default function App() {
           children: [
 
           ]
+
         }
+
+        ,
+        {
+          path: 'register',
+          element: <Register />,
+          children: [
+
+          ]
+        },
+        {
+          path: 'loging',
+          element: <Loging />,
+          children: [
+
+          ]
+        },
+        {
+          path: 'mainPage',
+          element: <Mainpage />,
+          children: [
+
+          ]
+        },
       ]
     }
   ])

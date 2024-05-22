@@ -186,11 +186,20 @@ const changePassword = async (req, res, next) => {
     }
 };
 
+const logoutUser = (req, res, next) => {
+    try {
+        return res.status(200)
+            .cookie('token', '', { maxAge: 0, httpOnly: true }) // Clear the token cookie
+            .json({ success: true, token: '', message: 'Logged out successfully' });
+    } catch (error) {
+        next(error); // Pass errors to custom error handler
+    }
+};
 
 const checkAuth = (req, res, next) => {
-   
+
     let { user } = req
     res.status(200).json({ success: true, user, msg: 'user authenticated!' })
 };
 
-module.exports = { checkAuth, RegisterUser, changePassword, LoginUser, forgotPassword, verifyOtpAndResetPassword };
+module.exports = { checkAuth, logoutUser, RegisterUser, changePassword, LoginUser, forgotPassword, verifyOtpAndResetPassword };
