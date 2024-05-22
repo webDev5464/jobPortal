@@ -13,7 +13,6 @@ import { RiUserSharedFill } from "react-icons/ri";
 import CandidateReg from '../layouts/CandidateReg';
 import EmployerReg from '../layouts/EmployerReg';
 
-
 const Register = ({ setRegForm }) => {
     let [myActive, setMyActive] = useState('Candidate');
 
@@ -62,4 +61,3 @@ const Register = ({ setRegForm }) => {
 }
 
 export default Register;
-

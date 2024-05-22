@@ -54,7 +54,9 @@ const RegisterUser = async (req, res, next) => {
         // Save the user to the database
         await newUser.save();
 
-        return res.status(201).json({ success: true, message: 'User registered successfully' });
+        setTimeout(() => {
+            return res.status(201).json({ success: true, message: 'User registered successfully' });
+        }, 3000)
     } catch (error) {
         next(error); // Pass errors to custom error handler
     }
@@ -80,10 +82,10 @@ const LoginUser = async (req, res, next) => {
         }
 
         // Generate JWT token for authentication
-        const token = jwt.sign({ userId: user._id }, 'jatinisbestcoderintheworld', { expiresIn: '1m' });
+        const token = jwt.sign({ userId: user._id }, 'jatinisbestcoderintheworld', { expiresIn: '1h' });
 
         return res.status(200)
-            .cookie('token', token, { maxAge: 60000, httpOnly: true }) // Set cookie with token
+            .cookie('token', token, { maxAge: 60 * 60000, httpOnly: true }) // Set cookie with token
             .json({ success: true, token }); // Send token in the response body
 
     } catch (error) {
@@ -184,8 +186,20 @@ const changePassword = async (req, res, next) => {
     }
 };
 
-const checkAuth = (req, res, next) => {
-    res.status(200).json({ success: true, user: req.user });
+const logoutUser = (req, res, next) => {
+    try {
+        return res.status(200)
+            .cookie('token', '', { maxAge: 0, httpOnly: true }) // Clear the token cookie
+            .json({ success: true, token: '', message: 'Logged out successfully' });
+    } catch (error) {
+        next(error); // Pass errors to custom error handler
+    }
 };
 
-module.exports = { checkAuth, RegisterUser, changePassword, LoginUser, forgotPassword, verifyOtpAndResetPassword };
+const checkAuth = (req, res, next) => {
+
+    let { user } = req
+    res.status(200).json({ success: true, user, msg: 'user authenticated!' })
+};
+
+module.exports = { checkAuth, logoutUser, RegisterUser, changePassword, LoginUser, forgotPassword, verifyOtpAndResetPassword };

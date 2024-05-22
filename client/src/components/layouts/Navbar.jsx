@@ -3,29 +3,31 @@ import logo3 from './logo.png'
 import { NavLink } from 'react-router-dom'
 import { IoIosNotificationsOutline } from "react-icons/io";
 import Register from '../user/Regitser'
+import Login from '../Login';
 
 
 
 const Navbar = () => {
   let [regForm, setRegForm] = useState(false)
+  let [logForm, setLogForm] = useState(false)
 
   return (
     <div >
-      <div className='flex flex-1 items-center justify-between pt-5'>
+      <div className='flex flex-1 items-center justify-between pt-5 pb-5'>
         <div className='flex flex-1 ml-9'>
 
-          <img className='w-44 h-55' src={logo3} alt="" />
+          <img className='w-44 h-55' src={logo3} alt="" />~
         </div>
-        <div className='flex flex-1 group-relative'>
-          <ul className='flex items-center justify-center  font-semibold '>
-            <li clas><NavLink to={'/'} className='text-primary mx-3 hidden group-hover:block'>Home</NavLink>
-              <ul className='  absolute block group-hover:hidden justify-center items-center border p-2 mt- bg-gray underlinedecoration-1'>
+        <div className='flex flex-1'>
+          <ul className='flex items-center justify-around font-semibold li-none '>
+            <li clas><NavLink to={'/'} className='text-primary mx-3 '>Home</NavLink>
+              {/* <ul className='justify-center items-center border p-2 mt- bg-gray underlinedecoration-1'>
                 <li><NavLink >New</NavLink></li>
                 <li><NavLink >Modern</NavLink></li>
                 <li><NavLink>Fancy</NavLink></li>
                 <li><NavLink>Classic</NavLink></li>
                 <li><NavLink>Transparent</NavLink></li>
-              </ul>
+              </ul> */}
             </li>
             <li className='hover:text-primary duration-300 mx-3'><NavLink to={'jobs'}>Jobs</NavLink></li>
             <li className='hover:text-primary duration-300 mx-3'><NavLink to={'Employer'}>Employers</NavLink></li>
@@ -37,7 +39,7 @@ const Navbar = () => {
         <div className='flex  flex-1 items-center justify-center font-semibold'>
           <IoIosNotificationsOutline className=' text-2xl mx-2 ' />
           <NavLink onClick={() => setRegForm(!regForm)} className=' text-primary hover:text-black duration-300'>Register<span className='border-r-2 border-slate-200 m-1'></span></NavLink>
-          <NavLink className=' text-primary hover:text-black duration-300 '>Sign In</NavLink>
+          <NavLink onClick={() => setLogForm(!regForm)} className=' text-primary hover:text-black duration-300 '>Sign In</NavLink>
           <button className=' m-2 p-2 bg-primary text-white  rounded-sm hover:bg-black'>Post New Jobs</button>
         </div>
 
@@ -63,6 +65,7 @@ const Navbar = () => {
         </div> */}
       </div>
       {regForm && <Register setRegForm={setRegForm} />}
+      {logForm && <Login setLogForm={setLogForm} />}
     </div>
   )
 }
