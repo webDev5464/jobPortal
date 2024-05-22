@@ -10,9 +10,9 @@ const RouterLayout = () => {
     return (
         <div className=''>
 
-            {success ? <Outlet /> : <Mainpage />}
+    {/* {success ? <Outlet /> : <Mainpage />} */}
 
-
+           <Outlet />
         </div>
     )
 }

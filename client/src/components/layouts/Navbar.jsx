@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 // import avtar from './nature4.jpg'
 import { IoMdClose } from "react-icons/io";
 import clsx from 'clsx';
-import logo2 from './logo2.jpg'
+// import logo2 from './logo2.jpg'
 // import { FaCircleUser } from "react-icons/fa6";
 import { IoMdNotifications } from "react-icons/io";
 import Register from '../user/Regitser'
