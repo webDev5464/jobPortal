@@ -14,6 +14,8 @@ import Jobs from './Jobs'
 import Candidates from './components/layouts/Candidates'
 import Packages from './components/layouts/Packages'
 import Pages from './Pages'
+import Footer from './components/user/Footer'
+// export default function App() {
 
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -117,6 +119,13 @@ export default function App() {
         {
           path: 'loging',
           element: <Loging />,
+          children: [
+
+          ]
+        },
+        {
+          path: 'footer',
+          element: <Footer />,
           children: [
 
           ]
