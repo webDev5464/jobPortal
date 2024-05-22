@@ -9,7 +9,7 @@ const { authenticateUser } = require('../middleware/auth');
 router.post('/register', RegisterUser);
 // Route for user login
 router.post('/login', LoginUser);
-router.get('/check', authenticateUser, checkAuth);
+router.get('/auth', authenticateUser, checkAuth);
 router.post('/change-password', authenticateUser, changePassword);
 router.post('/forgot-password', forgotPassword);
 router.post('/reset-password', verifyOtpAndResetPassword);

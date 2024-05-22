@@ -8,12 +8,14 @@ import logo2 from './logo2.jpg'
 // import { FaCircleUser } from "react-icons/fa6";
 import { IoMdNotifications } from "react-icons/io";
 import Register from '../user/Regitser'
+import Login from '../Login';
 
 
 // import { FaOpencart } from "react-icons/fa6";
 
 const Navbar = () => {
-    let [regForm, setRegForm] = useState(true)
+    let [regForm, setRegForm] = useState(false)
+    let [logForm, setLogForm] = useState(false)
     const [isSidebarOpen, setMenu] = useState(false)
     return (
         <main>
@@ -41,7 +43,7 @@ const Navbar = () => {
                     <IoMdNotifications className='text-3xl' />
                     {/* <img  className= "w-10 h-10 rounded-full" src={avtar} alt="" /> */}
                     <button onClick={() => setRegForm(!regForm)} className='py-1 px-3 bg-black text-white rounded-lg'>Register</button>
-                    <button className='px-3 py-1 bg-black text-white rounded-lg'>Login</button>
+                    <button onClick={() => setLogForm(!logForm)} className='px-3 py-1 bg-black text-white rounded-lg'>Login</button>
                     {/* <NavLink><FaCircleUser className='text-3xl' /></NavLink> */}
                     <FiMenu onClick={() => setMenu(true)} className='text-4xl cursor-pointer' />
                     {/*cart icon */}
@@ -51,6 +53,7 @@ const Navbar = () => {
             </nav>
             <hr />
             {regForm && <Register setRegForm={setRegForm} />}
+            {logForm && <Login setLogForm={setLogForm} />}
         </main>
     )
 }

@@ -1,6 +1,6 @@
 // src/features/auth/authSlice.js
 import { createSlice } from '@reduxjs/toolkit';
-import { registerUser, loginUser } from '../thunk/authThunks';
+import { registerUser, loginUser, verifyUser } from '../thunk/authThunks';
 
 const initialState = {
     user: null,
@@ -24,11 +24,10 @@ const authSlice = createSlice({
             })
             .addCase(registerUser.fulfilled, (state, action) => {
                 state.loading = false;
-                state.user = action.payload;
             })
             .addCase(registerUser.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload;
+                state.error = action.payload.message;
             })
             .addCase(loginUser.pending, (state) => {
                 state.loading = true;
@@ -36,11 +35,24 @@ const authSlice = createSlice({
             })
             .addCase(loginUser.fulfilled, (state, action) => {
                 state.loading = false;
-                state.user = action.payload;
+                state.error = null;
+                localStorage.setItem('token', action.payload.token);
             })
             .addCase(loginUser.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload;
+                state.error = action.payload.message;
+            })
+            .addCase(verifyUser.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(verifyUser.fulfilled, (state, action) => {
+                state.loading = false;
+                state.user = action.payload.user;
+            })
+            .addCase(verifyUser.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload.message;
             });
     },
 });
