@@ -8,9 +8,10 @@ import Login from '../Login';
 
 
 const Navbar = () => {
+
   let [regForm, setRegForm] = useState(false)
   let [logForm, setLogForm] = useState(false)
-
+console.log("hii")
   return (
     <div >
       <div className='flex flex-1 items-center justify-between pt-5 pb-5'>
