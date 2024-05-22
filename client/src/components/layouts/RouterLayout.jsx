@@ -10,14 +10,9 @@ const RouterLayout = () => {
     return (
         <div className=''>
 
-<<<<<<< HEAD
-    {/* {success ? <Outlet /> : <Mainpage />} */}
-=======
-            {user.isAuth ? <Outlet /> : <Mainpage />}
+            {/* {success ? <Outlet /> : <Mainpage />} */}
 
->>>>>>> b1caa0ad82f40a5050c7bf1a824b49796554acd4
-
-           <Outlet />
+            <Outlet />
         </div>
     )
 }

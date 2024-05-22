@@ -50,7 +50,7 @@ const Footer = () => {
                      <li className='flex items-center   hover:text-blue-400'><span className='mx-1'> <HiArrowSmallRight /></span>Job packages</li>
                      <li className='flex items-center   hover:text-blue-400'><span className='mx-1'> <HiArrowSmallRight /></span>Jobs Listing</li>
                      <li className='flex items-center   hover:text-blue-400'><span className='mx-1'> <HiArrowSmallRight /></span>jobs Style Grid</li>
-                   </ul>
+                   </ul>j
                 </div>
                 
 

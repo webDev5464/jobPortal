@@ -14,11 +14,8 @@ import Jobs from './Jobs'
 import Candidates from './components/layouts/Candidates'
 import Packages from './components/layouts/Packages'
 import Pages from './Pages'
-<<<<<<< HEAD
 import Footer from './components/user/Footer'
-export default function App() {
-=======
->>>>>>> b1caa0ad82f40a5050c7bf1a824b49796554acd4
+// export default function App() {
 
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -127,21 +124,19 @@ export default function App() {
           ]
         },
         {
-<<<<<<< HEAD
           path: 'footer',
           element: <Footer />,
           children: [
 
           ]
-        }
-=======
+        },
+        {
           path: 'mainPage',
           element: <Mainpage />,
           children: [
 
           ]
         },
->>>>>>> b1caa0ad82f40a5050c7bf1a824b49796554acd4
       ]
     }
   ])
