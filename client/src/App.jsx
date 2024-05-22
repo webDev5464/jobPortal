@@ -6,7 +6,7 @@ import EmployerLayout from './components/layouts/EmployerLayout'
 
 import Register from './components/user/Regitser'
 
-import Loging from './components/Loging'
+import Loging from './components/Login'
 import Navbar from './components/layouts/Navbar'
 import Home from './components/Home'
 import Employers from './components/layouts/Employers'
@@ -14,16 +14,36 @@ import Jobs from './Jobs'
 import Candidates from './components/layouts/Candidates'
 import Packages from './components/layouts/Packages'
 import Pages from './Pages'
+<<<<<<< HEAD
 import Footer from './components/user/Footer'
 export default function App() {
+=======
+>>>>>>> b1caa0ad82f40a5050c7bf1a824b49796554acd4
 
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { verifyUser } from './redux/thunk/authThunks'
+
+import Mainpage from './components/Mainpage'
+
+export default function App() {
+  const user = useSelector((state) => state.auth);
+
+  let dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(verifyUser())
+  }, [])
+
+  useEffect(() => {
+    console.log('jatin', user)
+  }, [user])
   let router = createBrowserRouter([
 
     {
       path: '/',
       element: <RouterLayout />,
       children: [
-       
+
         {
           path: '/',
           element: <Home />,
@@ -88,7 +108,10 @@ export default function App() {
           children: [
 
           ]
-        },
+
+        }
+
+        ,
         {
           path: 'register',
           element: <Register />,
@@ -104,12 +127,21 @@ export default function App() {
           ]
         },
         {
+<<<<<<< HEAD
           path: 'footer',
           element: <Footer />,
           children: [
 
           ]
         }
+=======
+          path: 'mainPage',
+          element: <Mainpage />,
+          children: [
+
+          ]
+        },
+>>>>>>> b1caa0ad82f40a5050c7bf1a824b49796554acd4
       ]
     }
   ])
