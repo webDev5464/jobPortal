@@ -21,7 +21,11 @@
     "react-router-dom": "^6.23.1",
     "redux": "^5.0.1",
     "redux-persist": "^6.0.0",
+<<<<<<< HEAD
     "sweetalert2": "^11.11.0"
+=======
+    "swiper": "^11.1.3"
+>>>>>>> ce0da933c6732c1869ba523521dac1852299e8ea
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

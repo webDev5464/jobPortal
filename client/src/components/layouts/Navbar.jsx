@@ -1,63 +1,74 @@
 import React, { useState } from 'react'
-import { FiMenu } from "react-icons/fi";
-import { NavLink } from 'react-router-dom';
-// import avtar from './nature4.jpg'
-import { IoMdClose } from "react-icons/io";
-import clsx from 'clsx';
-import logo2 from './logo2.jpg'
-// import { FaCircleUser } from "react-icons/fa6";
-import { IoMdNotifications } from "react-icons/io";
+import logo3 from './logo.png'
+import { NavLink } from 'react-router-dom'
+import { IoIosNotificationsOutline } from "react-icons/io";
 import Register from '../user/Regitser'
 import Login from '../Login';
 
 
-// import { FaOpencart } from "react-icons/fa6";
 
 const Navbar = () => {
 
-    let [regForm, setRegForm] = useState(false)
-    let [logForm, setLogForm] = useState(false)
+  let [regForm, setRegForm] = useState(false)
+  let [logForm, setLogForm] = useState(false)
+console.log("hii")
+  return (
+    <div >
+      <div className='flex flex-1 items-center justify-between pt-5 pb-5'>
+        <div className='flex flex-1 ml-9'>
 
-    const [isSidebarOpen, setMenu] = useState(false)
-    return (
-        <main>
-            <nav className='flex justify-between px-8 items-center py-6'>
-                <section className='flex items-center gap-4'>
-                    {/* <FiMenu onClick={() =>setMenu(true)} className='text-3xl cursor-pointer'/> */}
-                    <NavLink className="text-3xl "><img className='w-20 h-25 text-5xl border' src={logo2} alt="" /></NavLink>
-                    {/* menu */}
-                    {/* logo */}
-                </section>
-                {/* sidebar mobile menu*/}
-                <div className={clsx("fixed h-full w-screen  bg-black/50 backdrop-blur-sm top-0 right-0 -translate-x-full transition-all",
-                    isSidebarOpen && 'translate-x-0')}>
-                    <section className='text-black bg-white flex-col absolute left-0 top-0 h-screen p-8 gap-8 z-50 w-56 flex'>
-                        <IoMdClose onClick={() => setMenu(false)} className='mt-0 mb-8 text-3xl cursor-pointer ' />
-                        <NavLink to={'Home'} className="font-bold">Home</NavLink>
-                        <NavLink to={'jobs'} className="font-bold">Jobs</NavLink>
-                        <NavLink to={'Employers'} className="font-bold">Employers</NavLink>
-                        <NavLink to={'candidate'} className="font-bold">Candidates</NavLink>
-                        <NavLink to={'packages'} className="font-bold">Packages</NavLink>
-                        <NavLink to={'pages'} className="font-bold">Pages</NavLink>
-                    </section>
-                </div>
-                <section className='flex items-center gap-5'>
-                    <IoMdNotifications className='text-3xl' />
-                    {/* <img  className= "w-10 h-10 rounded-full" src={avtar} alt="" /> */}
-                    <button onClick={() => setRegForm(!regForm)} className='py-1 px-3 bg-black text-white rounded-lg'>Register</button>
-                    <button onClick={() => setLogForm(!logForm)} className='px-3 py-1 bg-black text-white rounded-lg'>Login</button>
-                    {/* <NavLink><FaCircleUser className='text-3xl' /></NavLink> */}
-                    <FiMenu onClick={() => setMenu(true)} className='text-4xl cursor-pointer' />
-                    {/*cart icon */}
-                    {/*avtar img*/}
-                </section>
+          <img className='w-44 h-55' src={logo3} alt="" />~
+        </div>
+        <div className='flex flex-1'>
+          <ul className='flex items-center justify-around font-semibold li-none '>
+            <li clas><NavLink to={'/'} className='text-primary mx-3 '>Home</NavLink>
+              {/* <ul className='justify-center items-center border p-2 mt- bg-gray underlinedecoration-1'>
+                <li><NavLink >New</NavLink></li>
+                <li><NavLink >Modern</NavLink></li>
+                <li><NavLink>Fancy</NavLink></li>
+                <li><NavLink>Classic</NavLink></li>
+                <li><NavLink>Transparent</NavLink></li>
+              </ul> */}
+            </li>
+            <li className='hover:text-primary duration-300 mx-3'><NavLink to={'jobs'}>Jobs</NavLink></li>
+            <li className='hover:text-primary duration-300 mx-3'><NavLink to={'Employer'}>Employers</NavLink></li>
+            <li className='hover:text-primary duration-300 mx-3'><NavLink to={'candidate'}>Candidates</NavLink></li>
+            <li className='hover:text-primary duration-300 mx-3'><NavLink to={'packages'}>Packages</NavLink></li>
+            <li className='hover:text-primary duration-300 mx-3'><NavLink to={'pages'}>Pages</NavLink></li>
+          </ul>
+        </div>
+        <div className='flex  flex-1 items-center justify-center font-semibold'>
+          <IoIosNotificationsOutline className=' text-2xl mx-2 ' />
+          <NavLink onClick={() => setRegForm(!regForm)} className=' text-primary hover:text-black duration-300'>Register<span className='border-r-2 border-slate-200 m-1'></span></NavLink>
+          <NavLink onClick={() => setLogForm(!regForm)} className=' text-primary hover:text-black duration-300 '>Sign In</NavLink>
+          <button className=' m-2 p-2 bg-primary text-white  rounded-sm hover:bg-black'>Post New Jobs</button>
+        </div>
 
-            </nav>
-            <hr />
-            {regForm && <Register setRegForm={setRegForm} />}
-            {logForm && <Login setLogForm={setLogForm} />}
-        </main>
-    )
+        {/* <div>
+            <ul className='flex justify-between items-center gap-4 font-semibold
+            mt-6 ml-24  hover: color-primary transition-0.5s'>
+              <li ><NavLink to={'/'} className='text-primary '>Home</NavLink></li> 
+              <li className='hover:text-primary duration-300'><NavLink to={'jobs'}>Jobs</NavLink></li> 
+              <li className='hover:text-primary duration-300'><NavLink to={'Employer'}>Employers</NavLink></li> 
+              <li className='hover:text-primary duration-300'><NavLink to={'candidate'}>Candidates</NavLink></li> 
+              <li className='hover:text-primary duration-300'><NavLink to={'packages'}>Packages</NavLink></li> 
+              <li className='hover:text-primary duration-300'><NavLink to={'pages'}>Pages</NavLink></li> 
+            </ul>
+        </div> */}
+
+        {/* <div className='flex  items-center justify-center font-semibold   gap-3 text-1xl ml-60 mt-7'>
+        <IoIosNotificationsOutline className=' text-2xl ' />
+        <NavLink className='text-blue-700'>Register</NavLink>
+        <NavLink className='text-blue-700 border-x- px-2'>Sign In</NavLink>
+        <div><button className='px-1 bg-primary text-white -mt-1 py-1 rounded-sm '>Post New Jobs</button>
+        </div>
+        
+        </div> */}
+      </div>
+      {regForm && <Register setRegForm={setRegForm} />}
+      {logForm && <Login setLogForm={setLogForm} />}
+    </div>
+  )
 }
 
 export default Navbar
