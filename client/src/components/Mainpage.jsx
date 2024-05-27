@@ -157,7 +157,7 @@ const Mainpage = () => {
                     <div className="w-1/3 flex items-center">
                         <TestimonialSwiper reverse={true} />
                     </div>
-                    
+
                 </div>
 
 
@@ -200,7 +200,8 @@ const Mainpage = () => {
                             </div>
                             <div className='flex justify-center items-center bg-sky-300 text-white p-[10px] font-bold rounded-md w-[310px] border-2 '>READ ARTICLES</div>
                         </div>
-                        <div  className='w-[350px] h-[550px] bg-white flex flex-col  items-center shadow-2xl rounded-md mt-[120px] hover:duration-[2s] hover:[transform:rotatey(360deg)]'>
+                        <div className='hover:duration-[0.5s] hover:p-0 rounded-md w-[350px] h-[550px] overflow-hidden border-2 mt-[120px] p-2'>  
+                            <div className='w-[350px] h-[550px] bg-white flex flex-col  items-center shadow-2xl rounded-md   border-2'>
                             <div style={{ backgroundImage: `url(${Clock})` }} className='bg-cover bg-center w-[350px] h-[200px] bg-neutral-50 rounded-md'></div>
                             <div className='p-5'>
                                 <div className='text-red-500 font-bold'>BLOGS</div>
@@ -216,6 +217,7 @@ const Mainpage = () => {
                             </div>
                             <div className='flex justify-center items-center bg-sky-300 text-white p-[10px] font-bold rounded-md w-[310px] border-2  '>READ ARTICLES</div>
                         </div>
+                        </div>
 
                     </div>
 
@@ -225,7 +227,6 @@ const Mainpage = () => {
 
 
 
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         </>
     )
 }
