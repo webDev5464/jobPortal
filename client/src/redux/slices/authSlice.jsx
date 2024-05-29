@@ -44,32 +44,33 @@ const authSlice = createSlice({
             })
             .addCase(loginUser.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload.message;
+                state.message = action.payload.message;
             })
             .addCase(verifyUser.pending, (state) => {
                 state.loading = true;
-                state.error = null;
+                state.message = null;
             })
             .addCase(verifyUser.fulfilled, (state, action) => {
                 state.loading = false;
                 state.user = action.payload.user;
                 state.isAuth = true
+                console.log('very', action.payload)
             })
             .addCase(verifyUser.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload.message;
+                state.isAuth = false
+                state.message = action.payload.message;
+                console.log('veryre', action.payload)
             }).addCase(logoutUser.pending, (state) => {
                 state.loading = true;
-                state.error = null;
+                state.message = null;
             })
             .addCase(logoutUser.fulfilled, (state, action) => {
-
                 state.loading = false;
                 state.user = null;
                 localStorage.removeItem('token');
                 state.isAuth = false
                 state.message = action.payload.message;
-
             })
             .addCase(logoutUser.rejected, (state, action) => {
                 state.loading = false;
@@ -80,6 +81,7 @@ const authSlice = createSlice({
             });
     },
 });
+
 
 export const { logout } = authSlice.actions;
 export default authSlice.reducer;

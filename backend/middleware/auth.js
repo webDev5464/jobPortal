@@ -9,7 +9,7 @@ const authenticateUser = async (req, res, next) => {
 
         // Check if token is provided=1
         if (!token) {
-            throw new ErrorHandler('Token is required', 401);  
+            throw new ErrorHandler('Token is required', 401);
         }
         // Verify token
         const decoded = jwt.verify(token, 'jatinisbestcoderintheworld');
@@ -23,8 +23,8 @@ const authenticateUser = async (req, res, next) => {
         // Proceed to next middleware or route handler
         next();
     } catch (error) {
-        console.log(error)
-        next(error); // Pass errors to custom error handler
+        console.log(error.message)
+        next(new ErrorHandler(error.message, 501)); // Pass errors to custom error handler
     }
 };
 
