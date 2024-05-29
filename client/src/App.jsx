@@ -25,11 +25,17 @@ import Mainpage from './components/Mainpage'
 
 export default function App() {
   const user = useSelector((state) => state.auth);
-
   let dispatch = useDispatch()
   useEffect(() => {
     dispatch(verifyUser())
   }, [])
+  let fireSwal = (title, text, is) => {
+    Swal.fire({
+      title,
+      text,
+      icon: is ? "success" : "error",
+    });
+  }
 
   useEffect(() => {
     console.log('jatin', user)

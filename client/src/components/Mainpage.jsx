@@ -19,16 +19,15 @@ import { FaBookReader } from "react-icons/fa";
 import { IoFastFood } from "react-icons/io5";
 import { GiHospitalCross } from "react-icons/gi";
 
-import { BiSolidQuoteLeft } from "react-icons/bi";
-import { FaChevronCircleLeft } from "react-icons/fa";
-import { FaChevronCircleRight } from "react-icons/fa";
+
 
 import { FaFacebook, FaSnapchatGhost } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { MdWhatsapp } from "react-icons/md";
 
-import { FaAngleDoubleUp } from "react-icons/fa";
+
 import TestimonialSwiper from './user/mianPage/TestimonialSwiper';
+import Footer from './user/Footer';
 
 
 
@@ -51,21 +50,23 @@ const Mainpage = () => {
 
                         <div><input className="placeholder:italic placeholder:text-slate-400  bg-white w-[300px] border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm h-[50px] w-[300px]" placeholder="Select Sector" type="text" name="search" /></div>
 
-                        <div className="w-[50px] h-[50px] text-white border border-yellow-600 border-4 rounded-md justify-center flex items-center text-[25px]">{<FaMagnifyingGlass />}</div>
+                        <div className="w-[50px] h-[50px] text-white  border-yellow-600 border-4 rounded-md justify-center flex items-center text-[25px]">{<FaMagnifyingGlass />}</div>
                     </div>
                     <div id='upload-hiring' className='flex justify-center items-center gap-3'>
                         <div className='flex  items-center border-2 p-2 rounded-sm text-white border-black bg-black/65'><span className='text-[29px]'>{<FaRegArrowAltCircleUp />}</span><p className='text-xl ml-1'>Upload Your Resume</p></div>
                         <div className='flex  items-center border-2 p-2 rounded-sm text-white border-black bg-black/65 '><span className='text-[30px]'>{<FaBriefcase />}</span ><p className='text-xl ml-1'>Hiring? Post a job for free</p></div>
                     </div>
                 </div>
-                <div id='counting-analyst' className='flex py-4 justify-evenly items-center ml-[150px] '>
-                    <div className='h-[70px] w-[300px] text-4xl  border-r-2' >123,012 <p className='w-fit text-zinc-400 text-xl'>Jobs Added</p></div>
-                    <div className='h-[70px] w-[300px] text-4xl border-r-2'>187,432 <p className='w-fit text-zinc-400 text-xl'>Active Resumes</p></div>
-                    <div className='h-[70px] w-[300px] text-4xl '>140,312 <p className='w-fit text-zinc-400 text-xl '>Positions Matched</p></div>
+                <div id='counting-analyst' className='flex py-4  justify-evenly pr-[80px] '>
+                    <div className='h-[70px] w-[400px] text-4xl  flex flex-col justify-center items-center' >123,012 <p className='w-fit text-zinc-400 text-xl '>Jobs Added</p></div>
+                    <div className='w-[3px] h-[70px] bg-black'></div>
+                    <div className='h-[70px] w-[300px] text-4xl  flex flex-col justify-center mr-5 items-center'>187,432 <p className='w-fit text-zinc-400 text-xl'>Active Resumes</p></div>
+                    <div className='w-[3px] h-[70px] bg-black'></div>
+                    <div className='h-[70px] w-[300px] text-4xl flex flex-col justify-center items-center '>140,312 <p className='w-fit text-zinc-400 text-xl '>Positions Matched</p></div>
                 </div>
 
 
-                <div id='icon-list' className='flex flex-col justify-center items-center text-center p-14 h-[680px] border-2 border-zinc-400 bg-white shadow-lg rounded-md'>
+                <div id='icon-list' className='flex flex-col justify-center items-center text-center  h-[680px] border-2 border-zinc-400 bg-white shadow-lg rounded-md'>
                     <h2 className='font-bold text-[25px]'>POPULAR JOB CATEGORIES</h2>
                     <p className='text-zinc-400'>A better career is out there. We'll help you find it. We're your first step to becoming everything you want to be.</p>
                     <div id='symbolic-grid' className='grid  grid-cols-4 gap-10 items-center m-10'>
@@ -124,7 +125,7 @@ const Mainpage = () => {
                         <div className='font-bold text-[50px]'>MILLIONS OF JOBS.</div>
                         <div className='font-bold text-[25px]'> FIND THE ONE THAT’S RIGHT FOR YOU.</div>
                         <p className='w-[500px] mt-3 text-zinc-400 '>Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 600,000 companies worldwide. The right job is out there.</p>
-                        <div className='mt-5 h-[50px] w-[200px] p-2'><div className='bg-orange-400 p-2 rounded-md w-fit  text-white font-bold cursor-pointer hover:border-[1px] hover:border-orange-400 hover:bg-white hover:text-orange-400'>SEARCH JOBS</div></div>
+                        <div className='mt-5 h-[50px] w-[200px] '><div className='bg-orange-400 p-2 rounded-md w-fit  text-white font-bold cursor-pointer hover:border-[1px] hover:border-orange-400 hover:bg-white hover:text-orange-400'>SEARCH JOBS</div></div>
                     </div>
 
                     <div style={{ backgroundImage: `url(${Serchimg})` }} className='bg-cover bg-center border-orange-400 duration-[0.5s] border-2 hover:border-[15px] shadow-xl rounded-lg h-[400px] w-[500px] '></div>
@@ -140,7 +141,7 @@ const Mainpage = () => {
                             <p className='ml-2 text-zinc-500'>Sorry!  Does not match record with your keyword
                                 Change your filter keywords to re-submit
                                 OR</p></div>
-                        <div className='mt-5 w-[200px] h-[50px] p-2'> <div className='bg-red-800 text-white p-2 rounded-md w-fit  font-bold cursor-pointer hover:border-[1px] hover:border-red-800 hover:bg-slate-200 hover:text-red-800'>RESET FILTERS</div></div>
+                        <div className=' flex justify-center items-center'> <div className='bg-red-800 text-white p-2 rounded-md mt-6 w-fit h-[40px]  font-bold cursor-pointer hover:border-[1px] hover:border-red-800 hover:bg-slate-200 hover:text-red-800'>RESET FILTERS</div></div>
 
                     </div>
 
@@ -163,11 +164,11 @@ const Mainpage = () => {
 
                 <div id='blog-contain' className='bg-white h-[800px] flex flex-col justify-center items-center pt-7 mt-[100px]'>
                     <div className='font-bold text-3xl'>FROM OUR BLOG</div>
-                    <p className='text-slate-400'>A better career is out there. We'll help you find it. We're your first step to becoming everything you want to be.</p>
+                    <p className='text-slate-400 p-2'>A better career is out there. We'll help you find it. We're your first step to becoming everything you want to be.</p>
 
-                    <div className='flex justify-evenly  w-full h-[700px] ' >
+                    <div className='flex justify-evenly items-center w-full h-[700px] ' >
 
-                        <div className='w-[350px] h-[550px] bg-white flex flex-col  items-center shadow-2xl rounded-md mt-[30px] hover:duration-[2s] hover:[transform:rotatey(360deg)]'>
+                        <div className='w-[350px] h-[550px] bg-white flex flex-col  items-center shadow-2xl rounded-md '>
                             <div style={{ backgroundImage: `url(${Menbook})` }} className='bg-cover bg-center w-[350px] h-[200px] bg-neutral-50 rounded-md'></div>
                             <div className='p-5'>
                                 <div className='text-red-500 font-bold'>BLOGS</div>
@@ -183,7 +184,7 @@ const Mainpage = () => {
                             </div>
                             <div className='flex justify-center items-center bg-sky-300 text-white p-[10px] font-bold rounded-md w-[310px] border-2  '>READ ARTICLES</div>
                         </div>
-                        <div className='w-[350px] h-[550px] bg-white flex flex-col  items-center shadow-2xl rounded-md mt-[80px] hover:duration-[2s] hover:[transform:rotatey(360deg)]'>
+                        <div className='w-[350px] h-[550px] bg-white flex flex-col  items-center shadow-2xl rounded-md '>
                             <div style={{ backgroundImage: `url(${Grouppic})` }} className='bg-cover bg-center w-[350px] h-[200px] bg-neutral-50 rounded-md'  ></div>
                             <div className='p-5'>
                                 <div className='text-red-500 font-bold'>BLOGS</div>
@@ -200,8 +201,10 @@ const Mainpage = () => {
                             </div>
                             <div className='flex justify-center items-center bg-sky-300 text-white p-[10px] font-bold rounded-md w-[310px] border-2 '>READ ARTICLES</div>
                         </div>
-                        <div className='hover:duration-[0.5s] hover:p-0 rounded-md w-[350px] h-[550px] overflow-hidden border-2 mt-[120px] p-2'>  
-                            <div className='w-[350px] h-[550px] bg-white flex flex-col  items-center shadow-2xl rounded-md   border-2'>
+                       
+
+                            <div className=' bg-white flex flex-col  items-center shadow-2xl rounded-md  w-[350px] h-[550px]  '>
+
                             <div style={{ backgroundImage: `url(${Clock})` }} className='bg-cover bg-center w-[350px] h-[200px] bg-neutral-50 rounded-md'></div>
                             <div className='p-5'>
                                 <div className='text-red-500 font-bold'>BLOGS</div>
@@ -221,9 +224,10 @@ const Mainpage = () => {
 
                     </div>
 
-                </div>
+                
 
             </section>
+            <Footer/>
 
 
 

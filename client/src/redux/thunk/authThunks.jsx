@@ -37,7 +37,7 @@ export const verifyUser = createAsyncThunk(
         try {
             const response = await axios.get('/api/user/auth', {
                 headers: {
-                    Authorization: `Bearer ${token}`,
+                    Authorization: `${token}`,
                 },
             });
             return response.data;

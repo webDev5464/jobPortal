@@ -5,11 +5,11 @@ const ErrorHandler = require('./errorHandler'); // Import the ErrorHandler middl
 const authenticateUser = async (req, res, next) => {
     try {
         // Extract token from request headers
-        const token = req.cookies.token || req.headers.authorization;
+        const token = req.cookies.token
 
         // Check if token is provided=1
         if (!token) {
-            throw new ErrorHandler('Token is required', 401);
+            throw new ErrorHandler('Token is required', 401);  
         }
         // Verify token
         const decoded = jwt.verify(token, 'jatinisbestcoderintheworld');
@@ -23,7 +23,9 @@ const authenticateUser = async (req, res, next) => {
         // Proceed to next middleware or route handler
         next();
     } catch (error) {
+        console.log(error)
         next(error); // Pass errors to custom error handler
     }
 };
+
 module.exports = { authenticateUser };
