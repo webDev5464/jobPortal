@@ -23,7 +23,7 @@ export const loginUser = createAsyncThunk(
             const token = response.data.token;
 
             // Dispatch verifyUser thunk with the token
-            dispatch(verifyUser(token));
+
 
             return { token };
         } catch (error) {
@@ -31,6 +31,8 @@ export const loginUser = createAsyncThunk(
         }
     }
 );
+
+
 export const verifyUser = createAsyncThunk(
     'auth/verifyUser',
     async (token, { rejectWithValue }) => {
@@ -40,13 +42,14 @@ export const verifyUser = createAsyncThunk(
                     Authorization: `${token}`,
                 },
             });
+
+
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response.data);
         }
     }
 )
-
 
 export const logoutUser = createAsyncThunk(
     'auth/logoutUser',
@@ -56,8 +59,8 @@ export const logoutUser = createAsyncThunk(
                 withCredentials: true,
             });
             let token = response.data.token;
-            dispatch(verifyUser(token));
-
+            console.log('log', response.data)
+            dispatch(verifyUser(token))
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response.data);
