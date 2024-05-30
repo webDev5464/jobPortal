@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { logoutUser } from '../redux/thunk/authThunks'
+import Navbar from './layouts/Navbar'
 
 const Home = () => {
   let dispatch = useDispatch()
@@ -8,7 +9,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Home Page</h1>
+      <Navbar />
       <button onClick={() => dispatch(logoutUser())}>Logout</button>
     </div>
   )

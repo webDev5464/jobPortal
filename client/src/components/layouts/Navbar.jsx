@@ -4,14 +4,15 @@ import { NavLink } from 'react-router-dom'
 import { IoIosNotificationsOutline } from "react-icons/io";
 import Register from '../user/Regitser'
 import Login from '../Login';
+import { useSelector } from 'react-redux';
 
 
 
 const Navbar = () => {
-
+  let user = useSelector((state) => state.auth)
   let [regForm, setRegForm] = useState(false)
   let [logForm, setLogForm] = useState(false)
-console.log("hii")
+  console.log("hii")
   return (
     <div >
       <div className='flex flex-1 items-center justify-between pt-5 pb-5'>
@@ -39,9 +40,14 @@ console.log("hii")
         </div>
         <div className='flex  flex-1 items-center justify-center font-semibold'>
           <IoIosNotificationsOutline className=' text-2xl mx-2 ' />
-          <NavLink onClick={() => setRegForm(!regForm)} className=' text-primary hover:text-black duration-300'>Register<span className='border-r-2 border-slate-200 m-1'></span></NavLink>
-          <NavLink onClick={() => setLogForm(!regForm)} className=' text-primary hover:text-black duration-300 '>Sign In</NavLink>
-          <button className=' m-2 p-2 bg-primary text-white  rounded-sm hover:bg-black'>Post New Jobs</button>
+
+          {user.isAuth ? <div>
+            <NavLink to={'/'} className=' text-primary hover:text-black duration-300'>My Account<span className='m-1'></span></NavLink>
+          </div> : <div>
+            <NavLink onClick={() => setRegForm(!regForm)} className=' text-primary hover:text-black duration-300'>Register<span className='border-r-2 border-slate-200 m-1'></span></NavLink>
+            <NavLink onClick={() => setLogForm(!logForm)} className=' text-primary hover:text-black duration-300 '>Sign In</NavLink>
+            <button className=' m-2 p-2 bg-primary text-white  rounded-sm hover:bg-black'>Post New Jobs</button>
+          </div>}
         </div>
 
         {/* <div>
@@ -65,8 +71,8 @@ console.log("hii")
         
         </div> */}
       </div>
-      {regForm && <Register setRegForm={setRegForm} />}
-      {logForm && <Login setLogForm={setLogForm} />}
+      {(regForm && !user.isAuth) && <Register setRegForm={setRegForm} />}
+      {(logForm && !user.isAuth) && <Login setLogForm={setLogForm} />}
     </div>
   )
 }

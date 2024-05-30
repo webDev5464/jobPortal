@@ -82,13 +82,14 @@ const LoginUser = async (req, res, next) => {
         }
 
         // Generate JWT token for authentication
-        const token = jwt.sign({ userId: user._id }, 'jatinisbestcoderintheworld', { expiresIn: '1h' });
+        const token = jwt.sign({ userId: user._id }, 'jatinisbestcoderintheworld', { expiresIn: '15d' });
 
         return res.status(200)
-            .cookie('token', token, { maxAge: 60 * 60000, httpOnly: true }) // Set cookie with token
+            .cookie('token', token, { maxAge: 15 * 24 * 60 * 60000, httpOnly: true }) // Set cookie with token
             .json({ success: true, token }); // Send token in the response body
 
     } catch (error) {
+        
 
         next(error); // Pass errors to custom error handler
     }

@@ -21,17 +21,14 @@ export const loginUser = createAsyncThunk(
         try {
             const response = await axios.post('/api/user/login', credentials);
             const token = response.data.token;
-
             // Dispatch verifyUser thunk with the token
-
-
+            dispatch(verifyUser(token))
             return { token };
         } catch (error) {
             return rejectWithValue(error.response.data);
         }
     }
 );
-
 
 export const verifyUser = createAsyncThunk(
     'auth/verifyUser',
