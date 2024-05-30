@@ -21,9 +21,10 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { verifyUser } from "./redux/thunk/authThunks";
 
-import Mainpage from "./components/Mainpage";
+
 import EmployerListing from "./components/layouts/EmployerListing";
 import Jobslisting from "./components/layouts/Joblisting";
+import Mainpage from "./components/user/mianPage/Mainpage";
 
 export default function App() {
   const user = useSelector((state) => state.auth);
@@ -49,7 +50,7 @@ export default function App() {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: <Mainpage />,
           children: [],
         },
         {
@@ -109,11 +110,7 @@ export default function App() {
           element: <Footer />,
           children: [],
         },
-        {
-          path: "mainPage",
-          element: <Mainpage />,
-          children: [],
-        },
+
         {
           path: "employerListing",
           element: <EmployerListing />,

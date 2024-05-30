@@ -1,14 +1,14 @@
 import React from 'react'
-import Navbar from './layouts/Navbar'
+import Navbar from '../../layouts/Navbar'
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { FaRegArrowAltCircleUp } from "react-icons/fa";
 import { FaBriefcase } from "react-icons/fa";
-import Hometopimg from './home-contain-images/Topimage.jpg'
-import Serchimg from './home-contain-images/Worklaptop.jpg'
-import Joy from './home-contain-images/Celebrate.jpg'
-import Clock from './home-contain-images/Clockwork.jpg'
-import Grouppic from './home-contain-images/Groupwork.jpg'
-import Menbook from './home-contain-images/Menbook.jpg'
+import Hometopimg from '../../home-contain-images/Topimage.jpg'
+import Serchimg from '../../home-contain-images/Worklaptop.jpg'
+import Joy from '../../home-contain-images/Celebrate.jpg'
+import Clock from '../../home-contain-images/Clockwork.jpg'
+import Grouppic from '../../home-contain-images/Groupwork.jpg'
+import Menbook from '../../home-contain-images/Menbook.jpg'
 
 import { FaChartBar } from "react-icons/fa";
 import { IoCarSport } from "react-icons/io5";
@@ -26,8 +26,8 @@ import { IoIosMail } from "react-icons/io";
 import { MdWhatsapp } from "react-icons/md";
 
 
-import TestimonialSwiper from './user/mianPage/TestimonialSwiper';
-import Footer from './user/Footer';
+import TestimonialSwiper from './TestimonialSwiper';
+import Footer from '../Footer';
 
 
 
@@ -201,9 +201,9 @@ const Mainpage = () => {
                             </div>
                             <div className='flex justify-center items-center bg-sky-300 text-white p-[10px] font-bold rounded-md w-[310px] border-2 '>READ ARTICLES</div>
                         </div>
-                       
 
-                            <div className=' bg-white flex flex-col  items-center shadow-2xl rounded-md  w-[350px] h-[550px]  '>
+
+                        <div className=' bg-white flex flex-col  items-center shadow-2xl rounded-md  w-[350px] h-[550px]  '>
 
                             <div style={{ backgroundImage: `url(${Clock})` }} className='bg-cover bg-center w-[350px] h-[200px] bg-neutral-50 rounded-md'></div>
                             <div className='p-5'>
@@ -220,14 +220,14 @@ const Mainpage = () => {
                             </div>
                             <div className='flex justify-center items-center bg-sky-300 text-white p-[10px] font-bold rounded-md w-[310px] border-2  '>READ ARTICLES</div>
                         </div>
-                        </div>
-
                     </div>
 
-                
+                </div>
+
+
 
             </section>
-            <Footer/>
+            <Footer />
 
 
 
