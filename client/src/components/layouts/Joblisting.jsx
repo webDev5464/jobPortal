@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa6";
 import { BsSearch } from "react-icons/bs";
@@ -7,6 +7,12 @@ import { IoIosArrowDown } from "react-icons/io";
 import { PiArrowsDownUpBold } from "react-icons/pi";
 
 const Jobslisting = () => {
+  const [drop, setDrop] = useState(false);
+
+  function clickHandle(){
+    setDrop(!drop )
+  }
+  
   return (
     <>
       <div>
@@ -67,24 +73,26 @@ const Jobslisting = () => {
             <div className="pb-2">
               <div className="shadow w-60">
                 <div className="text-white bg-primary flex items-center justify-center p-2">
-                  <button className="flex items-center text-xl ">
+                  <button className="flex items-center text-xl " onClick={clickHandle}>
                     <IoMdMail className="mx-2" />
                     Email Me New Jobs
                   </button>
                 </div>
-
+                {(drop && 
+                <>
                 <div className="flex flex-col px-2 ">
                   <input
                     type="text"
                     className="border px-3 my-2 w-56 py-2 "
                     placeholder="Job alert name..."
-                  />
+                    />
                   <input
                     type="email"
                     className="border px-3  my-2 w-56 py-2"
                     placeholder="exmple@gmail.com"
-                  />
+                    />
                 </div>
+  
                 <div>
                   <p className="mx-2 ">
                     <input
@@ -93,7 +101,7 @@ const Jobslisting = () => {
                       id="daily"
                       value="daily"
                       className="mx-2"
-                    />
+                      />
                     <label htmlFor="daily">Daily</label>
                     <br />
                     <input
@@ -157,9 +165,13 @@ const Jobslisting = () => {
                     CREATE ALERT
                   </button>
                 </div>
+                </>
+                )}
               </div>
+              
             </div>
-
+            
+          
             <div className="pb-2">
               <div className="shadow  w-60">
                 <div className="w-58 cursor-pointer text-slate-500 font-bold bg-white flex items-center justify-between  px-4 p-2">
@@ -244,7 +256,7 @@ const Jobslisting = () => {
                       value="All"
                       className="mx-2"
                     />
-                    <label >All</label>
+                    <label>All</label>
                   </p>
                 </div>
               </div>

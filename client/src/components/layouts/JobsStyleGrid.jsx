@@ -22,7 +22,7 @@ const JobsStyleGrid = () => {
 
         {/* searchbar*/}
 
-        <div className="py-20 w-[100%] ">
+        <div className="py-20 w-[100%]">
           <div className="flex items-center justify-center">
             <div className="bg-white shadow shadow-slate-300 p-[25px]">
               <ul className="flex items-center ">
