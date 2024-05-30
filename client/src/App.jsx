@@ -24,6 +24,7 @@ import { verifyUser } from "./redux/thunk/authThunks";
 import Mainpage from "./components/Mainpage";
 import EmployerListing from "./components/layouts/EmployerListing";
 import Jobslisting from "./components/layouts/Joblisting";
+import JobsStyleGrid from "./components/layouts/JobsStyleGrid";
 
 export default function App() {
   const user = useSelector((state) => state.auth);
@@ -122,6 +123,10 @@ export default function App() {
         {
           path: "jobListing",
           element: <Jobslisting />,
+        },
+        {
+          path: "JobsStyleGrid",
+          element: <JobsStyleGrid />,
         },
       ],
     },

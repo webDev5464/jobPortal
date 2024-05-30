@@ -7,7 +7,8 @@ const RouterLayout = () => {
     const user = useSelector((state) => state.auth);
     return (
         <div className=''>
-            {user.isAuth ? <Outlet /> : <Mainpage />}
+            {/* {user.isAuth ? <Outlet /> : <Mainpage />} */}
+            <Outlet />
         </div>
     )
 }
