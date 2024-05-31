@@ -4,6 +4,7 @@ import { FaAngleRight } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 import { PiArrowsDownUpBold } from "react-icons/pi";
 import { NavLink } from "react-router-dom";
+import Footer from "../user/Footer";
 
 const JobsStyleGrid = () => {
   return (
@@ -59,7 +60,7 @@ const JobsStyleGrid = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 ">
+        <div className="grid grid-cols-2 pb-20 ">
           <div className="m-auto">
             <div className="py-4">
               <p className="text-xl">0 Jobs Found</p>
@@ -109,6 +110,7 @@ const JobsStyleGrid = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
