@@ -7,8 +7,8 @@ export const registerUser = createAsyncThunk(
     async (userData, { rejectWithValue }) => {
         try {
             const response = await axios.post('/api/user/register', userData);
-            console.log(response.data)
-            // return response.data;
+            // console.log(response.data)
+            return response.data;
         } catch (err) {
             return rejectWithValue(err.response.data);
         }
@@ -16,13 +16,54 @@ export const registerUser = createAsyncThunk(
 );
 
 export const loginUser = createAsyncThunk(
-    'auth/login',
-    async (credentials, { rejectWithValue }) => {
+    'auth/loginUser',
+    async (credentials, { rejectWithValue, dispatch }) => {
         try {
-            const response = await axios.post('/api/login', credentials);
+            const response = await axios.post('/api/user/login', credentials);
+            const token = response.data.token;
+
+            // Dispatch verifyUser thunk with the token
+
+
+            return { token };
+        } catch (error) {
+            return rejectWithValue(error.response.data);
+        }
+    }
+);
+
+
+export const verifyUser = createAsyncThunk(
+    'auth/verifyUser',
+    async (token, { rejectWithValue }) => {
+        try {
+            const response = await axios.get('/api/user/auth', {
+                headers: {
+                    Authorization: `${token}`,
+                },
+            });
+
+
             return response.data;
-        } catch (err) {
-            return rejectWithValue(err.response.data);
+        } catch (error) {
+            return rejectWithValue(error.response.data);
+        }
+    }
+)
+
+export const logoutUser = createAsyncThunk(
+    'auth/logoutUser',
+    async (_, { rejectWithValue, dispatch }) => {
+        try {
+            const response = await axios.post('/api/user/logout', {}, {
+                withCredentials: true,
+            });
+            let token = response.data.token;
+            console.log('log', response.data)
+            dispatch(verifyUser(token))
+            return response.data;
+        } catch (error) {
+            return rejectWithValue(error.response.data);
         }
     }
 );

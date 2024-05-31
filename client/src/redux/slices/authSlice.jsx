@@ -1,11 +1,13 @@
 // src/features/auth/authSlice.js
 import { createSlice } from '@reduxjs/toolkit';
-import { registerUser, loginUser } from '../thunk/authThunks';
+import { registerUser, loginUser, logoutUser, verifyUser } from '../thunk/authThunks';
 
 const initialState = {
     user: null,
     loading: false,
-    error: null,
+
+    isAuth: false,
+    message: null
 };
 
 const authSlice = createSlice({
@@ -20,30 +22,66 @@ const authSlice = createSlice({
         builder
             .addCase(registerUser.pending, (state) => {
                 state.loading = true;
-                state.error = null;
+                state.message = null;
             })
             .addCase(registerUser.fulfilled, (state, action) => {
                 state.loading = false;
-                state.user = action.payload;
+                state.message = action.payload.message;
+
             })
             .addCase(registerUser.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload;
+                state.message = action.payload.message;
             })
             .addCase(loginUser.pending, (state) => {
                 state.loading = true;
-                state.error = null;
+                state.message = null;
             })
             .addCase(loginUser.fulfilled, (state, action) => {
                 state.loading = false;
-                state.user = action.payload;
+                state.message = action.payload.message;
+                localStorage.setItem('token', action.payload.token);
             })
             .addCase(loginUser.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload;
+                state.message = action.payload.message;
+            })
+            .addCase(verifyUser.pending, (state) => {
+                state.loading = true;
+                state.message = null;
+            })
+            .addCase(verifyUser.fulfilled, (state, action) => {
+                state.loading = false;
+                state.user = action.payload.user;
+                state.isAuth = true
+                console.log('very', action.payload)
+            })
+            .addCase(verifyUser.rejected, (state, action) => {
+                state.loading = false;
+                state.isAuth = false
+                state.message = action.payload.message;
+                console.log('veryre', action.payload)
+            }).addCase(logoutUser.pending, (state) => {
+                state.loading = true;
+                state.message = null;
+            })
+            .addCase(logoutUser.fulfilled, (state, action) => {
+                state.loading = false;
+                state.user = null;
+                localStorage.removeItem('token');
+                state.isAuth = false
+                state.message = action.payload.message;
+            })
+            .addCase(logoutUser.rejected, (state, action) => {
+                state.loading = false;
+                state.user = null;
+                localStorage.removeItem('token');
+                state.isAuth = false
+                state.message = action.payload.message;
             });
     },
 });
+
 
 export const { logout } = authSlice.actions;
 export default authSlice.reducer;

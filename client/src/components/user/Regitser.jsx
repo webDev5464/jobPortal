@@ -13,8 +13,7 @@ import { RiUserSharedFill } from "react-icons/ri";
 import CandidateReg from '../layouts/CandidateReg';
 import EmployerReg from '../layouts/EmployerReg';
 
-
-const Register = () => {
+const Register = ({ setRegForm }) => {
     let [myActive, setMyActive] = useState('Candidate');
 
     useEffect(() => {
@@ -22,12 +21,12 @@ const Register = () => {
     }, []);
 
     return (
-        <div className="">
-            <div className="relative bg-slate-600 bg-opacity-10 h-[110vh] w-screen">
-                <div data-aos="fade-down" data-aos-duration="500" className="absolute mt-3 rounded-md left-[30%] h-[110vh] w-[40%] 2xl:w-[40%] md:w-[40%] bg-white">
+        <div onClick={() => setRegForm(false)} className="fixed flex items-center justify-center py-12 top-0 bg-black/75 h-screen w-full ">
+            <div onClick={(e) => e.stopPropagation()} className="bg-white rounded-sm h-full overflow-auto w-2/5">
+                <div data-aos="fade-down" data-aos-duration="500" className="">
                     <div className='2xl:flex xl:flex lg:flex md:flex sm:flex justify-between items-center mx-8 my-5'>
                         <h3 className='text-xl font-semibold text-gray'>SIGNUP TO YOUR ACCOUNT</h3>
-                        <NavLink to={-1}><IoMdClose className='cursor-pointer text-gray' /></NavLink>
+                        <button onClick={() => setRegForm(false)}><IoMdClose className='cursor-pointer text-gray' /></button>
                     </div>
                     <div className='2xl:flex xl:flex lg:flex md:flex sm:flex sm:mb-10'>
                         <div className="inline-flex items-center justify-center w-full">
@@ -62,4 +61,3 @@ const Register = () => {
 }
 
 export default Register;
-

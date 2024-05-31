@@ -1,21 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom'
-import { NavLink } from 'react-router-dom'
+import Mainpage from '../Mainpage';
 
 const RouterLayout = () => {
-
+    const user = useSelector((state) => state.auth);
     return (
         <div className=''>
-            <div className="container flex items-center justify-between">
-                <h1>Hello jassdev</h1>
-                <NavLink to={'register'}>
-                    <button>Register</button>
-                </NavLink>
-
-            </div>
-
+            {/* {user.isAuth ? <Outlet /> : <Mainpage />} */}
             <Outlet />
-
         </div>
     )
 }
