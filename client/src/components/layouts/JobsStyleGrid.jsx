@@ -5,6 +5,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { PiArrowsDownUpBold } from "react-icons/pi";
 import { NavLink } from "react-router-dom";
 import Footer from "../user/Footer";
+import { IoLogoGoogle } from "react-icons/io";
 
 const JobsStyleGrid = () => {
   return (
@@ -23,10 +24,11 @@ const JobsStyleGrid = () => {
 
         {/* searchbar*/}
 
-        <div className="py-20 w-[100%]">
-          <div className="flex items-center justify-center">
-            <div className="bg-white shadow shadow-slate-300 p-[25px]">
-              <ul className="flex items-center ">
+      
+        <div className="py-20 w-[100%] sm:w-[100%] lg:w-[100%]  ">
+          <div className="flex items-center justify-center ">
+            <div className="bg-white shadow shadow-slate-300 p-[25px] ">
+              <ul className="flex items-center sm:grid sm:grid-cols-2 xl:grid-cols-4  ">
                 <li>
                   <input
                     type="text"
@@ -37,19 +39,19 @@ const JobsStyleGrid = () => {
                 <li>
                   <input
                     type="text"
-                    className="p-4 shadow-slate-300 shadow w-72"
+                    className="p-4 shadow-slate-300 shadow w-72 "
                     placeholder="City,State or ZIP"
                   />
                 </li>
                 <li>
                   <input
                     type="text"
-                    className="p-4 shadow-slate-300 shadow w-72"
+                    className="p-4 shadow-slate-300 shadow w-72 "
                     placeholder="Select Sector"
                   />
                 </li>
                 <li>
-                  <div className=" w-[60px] h-[58px] flex items-center justify-center text-white  bg-primary">
+                  <div className=" w-[60px] h-[58px]  flex items-center justify-center text-white  bg-primary sm:w-full lg:w-[6   0px]">
                     <NavLink className="text-2xl">
                       <BsSearch />
                     </NavLink>
@@ -59,7 +61,7 @@ const JobsStyleGrid = () => {
             </div>
           </div>
         </div>
-
+        
         <div className="grid grid-cols-2 pb-20 ">
           <div className="m-auto">
             <div className="py-4">
@@ -76,9 +78,9 @@ const JobsStyleGrid = () => {
               Change your filter keywords to re-submit OR
             </p>
             <div className="py-2">
-            <button className="bg-primary text-white p-1 rounded-sm ">
-              RESET FILTERS
-            </button>
+              <button className="bg-primary text-white p-1 rounded-sm ">
+                RESET FILTERS
+              </button>
             </div>
           </div>
 
@@ -110,6 +112,8 @@ const JobsStyleGrid = () => {
           </div>
         </div>
       </div>
+
+   
       <Footer />
     </>
   );
