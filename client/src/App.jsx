@@ -16,6 +16,9 @@ import Home from './components/Home'
 import Jobs from './Jobs'
 import Postingnewjob from './components/user/Postingnewjob'
 import Mainpage from "./components/Mainpage";
+import JobsStyleGrid from "./components/layouts/JobsStyleGrid";
+import Jobslisting from "./components/layouts/Joblisting";
+
 
 export default function App() {
   const user = useSelector((state) => state.auth);
@@ -107,6 +110,20 @@ export default function App() {
         {
           path: 'mainPage',
           element: <Mainpage />,
+          children: [
+
+          ]
+        },
+        {
+          path: 'jobslisting',
+          element: <Jobslisting />,
+          children: [
+
+          ]
+        },
+        {
+          path: 'jobsStyleGrid',
+          element: <JobsStyleGrid />,
           children: [
 
           ]
