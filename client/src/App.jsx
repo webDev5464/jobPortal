@@ -14,6 +14,7 @@ import Jobs from './Jobs'
 import Candidates from './components/layouts/Candidates'
 import Packages from './components/layouts/Packages'
 import Pages from './Pages'
+import Postingnewjob from './components/user/Postingnewjob'
 export default function App() {
 
   let router = createBrowserRouter([
@@ -98,6 +99,13 @@ export default function App() {
         {
           path: 'loging',
           element: <Loging />,
+          children: [
+
+          ]
+        },
+        {
+          path: 'PostingNewjob',
+          element: <Postingnewjob />,
           children: [
 
           ]
