@@ -16,6 +16,7 @@ import Home from './components/Home'
 import Jobs from './Jobs'
 import Postingnewjob from './components/user/Postingnewjob'
 import Mainpage from "./components/Mainpage";
+import SignInSignOut from "./components/layouts/SignInSignOut";
 
 export default function App() {
   const user = useSelector((state) => state.auth);
@@ -109,6 +110,13 @@ export default function App() {
           element: <Mainpage />,
           children: [
 
+          ]
+        },
+        {
+          path: 'signinsignout',
+          element: <SignInSignOut />,
+          children : [
+            
           ]
         }
       ]
