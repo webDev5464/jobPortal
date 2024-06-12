@@ -638,9 +638,9 @@ const z = (hum)=>{
 
           {/* job apply type */}
 
-          <div className='w-2/6'>
+          <div className='w-2/6 pb-10'>
 
-            <p className='font-medium text-sm pb- pt-4'>Salary</p>
+            <p className='font-medium text-sm  pt-4'>Salary</p>
 
             <div className='relative inline-block w-full text-left'>
               <div>
@@ -1115,7 +1115,7 @@ const z = (hum)=>{
 
 <div className='main2'>
 
-<div className='flex justify-start gap-10 pt-5'>
+<div className='flex justify-start gap-10 pt-5 pb-10'>
 
 
 
@@ -1326,7 +1326,7 @@ const z = (hum)=>{
         </div>
 
 
-        <div className='flex px-7 justify-between'>
+        <div className='flex px-7 justify-between pb-10'>
 
           <div className='flex'>
           <button className=' px-1.5 border-neutral-200  text-black text-3xl text-white  bg-primary font-medium'><CiMenuFries /></button>
