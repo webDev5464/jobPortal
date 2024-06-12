@@ -26,6 +26,15 @@ import EmployerListing from "./components/layouts/EmployerListing";
 import Jobslisting from "./components/layouts/Joblisting";
 import JobsStyleGrid from "./components/layouts/JobsStyleGrid";
 
+import Loging from './components/Loging'
+import Navbar from './components/layouts/Navbar'
+import Home from './components/Home'
+import Employers from './components/layouts/Employers'
+import Jobs from './Jobs'
+import Candidates from './components/layouts/Candidates'
+import Packages from './components/layouts/Packages'
+import Pages from './Pages'
+import Postingnewjob from './components/user/Postingnewjob'
 export default function App() {
   const user = useSelector((state) => state.auth);
   let dispatch = useDispatch();
@@ -103,33 +112,21 @@ export default function App() {
         {
           path: "loging",
           element: <Loging />,
-          children: [],
+          children: [
+
+          ]
         },
         {
-          path: "footer",
-          element: <Footer />,
-          children: [],
-        },
-        {
-          path: "mainPage",
-          element: <Mainpage />,
-          children: [],
-        },
-        {
-          path: "employerListing",
-          element: <EmployerListing />,
-          children: [],
-        },
-        {
-          path: "jobListing",
-          element: <Jobslisting />,
-        },
-        {
-          path: "JobsStyleGrid",
-          element: <JobsStyleGrid />,
-        },
-      ],
-    },
-  ]);
-  return <RouterProvider router={router} />;
+          path: 'PostingNewjob',
+          element: <Postingnewjob />,
+          children: [
+
+          ]
+        }
+      ]
+    }
+  ])
+  return (
+    <RouterProvider router={router} />
+  )
 }
