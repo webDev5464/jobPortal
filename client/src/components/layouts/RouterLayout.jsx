@@ -5,11 +5,12 @@ import Mainpage from '../Mainpage';
 
 const RouterLayout = () => {
     const user = useSelector((state) => state.auth);
+    const success = true
     return (
         <div className=''>
 
             {success ? <Outlet /> : <Mainpage />}xl X
-        {/* <Outlet /> */}
+            {/* <Outlet /> */}
 
         </div>
     )

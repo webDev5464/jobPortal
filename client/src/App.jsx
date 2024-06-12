@@ -1,40 +1,22 @@
+import { useEffect } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { verifyUser } from "./redux/thunk/authThunks";
 import RouterLayout from "./components/layouts/RouterLayout";
 import UserLayout from "./components/layouts/UserLayout";
 import AdminLayout from "./components/layouts/AdminLayout";
 import EmployerLayout from "./components/layouts/EmployerLayout";
-
 import Register from "./components/user/Regitser";
-
 import Loging from "./components/Login";
-import Navbar from "./components/layouts/Navbar";
-import Home from "./components/Home";
 import Employers from "./components/layouts/Employers";
-import Jobs from "./Jobs";
 import Candidates from "./components/layouts/Candidates";
 import Packages from "./components/layouts/Packages";
 import Pages from "./Pages";
-import Footer from "./components/user/Footer";
-// export default function App() {
-
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { verifyUser } from "./redux/thunk/authThunks";
-
-import Mainpage from "./components/Mainpage";
-import EmployerListing from "./components/layouts/EmployerListing";
-import Jobslisting from "./components/layouts/Joblisting";
-import JobsStyleGrid from "./components/layouts/JobsStyleGrid";
-
-import Loging from './components/Loging'
-import Navbar from './components/layouts/Navbar'
 import Home from './components/Home'
-import Employers from './components/layouts/Employers'
 import Jobs from './Jobs'
-import Candidates from './components/layouts/Candidates'
-import Packages from './components/layouts/Packages'
-import Pages from './Pages'
 import Postingnewjob from './components/user/Postingnewjob'
+import Mainpage from "./components/Mainpage";
+
 export default function App() {
   const user = useSelector((state) => state.auth);
   let dispatch = useDispatch();
@@ -67,7 +49,6 @@ export default function App() {
           element: <Jobs />,
           children: [],
         },
-
         {
           path: "Employer",
           element: <Employers />,
@@ -119,6 +100,13 @@ export default function App() {
         {
           path: 'PostingNewjob',
           element: <Postingnewjob />,
+          children: [
+
+          ]
+        },
+        {
+          path: 'mainPage',
+          element: <Mainpage />,
           children: [
 
           ]
