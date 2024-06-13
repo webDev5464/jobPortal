@@ -29,48 +29,43 @@ const Jobslisting = () => {
         </div>
 
         {/* searchbar*/}
-
-        <div className="py-20 w-[100%] sm:w-[100%] lg:w-[100%]  ">
-          <div className="flex items-center justify-center ">
-            <div className="bg-white shadow shadow-slate-300 p-[25px] ">
-              <ul className="flex items-center sm:grid sm:grid-cols-2 xl:grid-cols-4  ">
-                <li>
-                  <input
-                    type="text"
-                    className=" p-4 shadow-slate-300 shadow w-72 "
-                    placeholder="Job Title,Keywords ,or Phrase"
-                  />
-                </li>
-                <li>
-                  <input
-                    type="text"
-                    className="p-4 shadow-slate-300 shadow w-72 "
-                    placeholder="City,State or ZIP"
-                  />
-                </li>
-                <li>
-                  <input
-                    type="text"
-                    className="p-4 shadow-slate-300 shadow w-72 "
-                    placeholder="Select Sector"
-                  />
-                </li>
-                <li>
-                  <div className=" w-[60px] h-[58px]  flex items-center justify-center text-white  bg-primary sm:w-full lg:w-[6   0px]">
-                    <NavLink className="text-2xl">
-                      <BsSearch />
-                    </NavLink>
-                  </div>
-                </li>
-              </ul>
+        <div className="px-20 qs:px-5 pt-20">
+          <div className="container mx-auto shadow shadow-slate-300 ">
+            <div className="flex items-center justify-center w-full py-4 qs:flex-wrap sm:flex-wrap md:flex-wrap">
+              <div>
+                <input
+                  type="text"
+                  className=" p-4 shadow-slate-300 shadow w-72  "
+                  placeholder="Job Title,Keywords ,or Phrase"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  className="p-4 shadow-slate-300 shadow w-72  "
+                  placeholder="City,State or ZIP"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  className="p-4 shadow-slate-300 shadow w-72  "
+                  placeholder="Select Sector"
+                />
+              </div>
+              <div className=" w-[50px] h-[56px]  flex items-center justify-center text-white  bg-primary   md:w-72 ">
+                <NavLink className="text-2xl">
+                  <BsSearch />
+                </NavLink>
+              </div>
             </div>
           </div>
         </div>
 
         {/* dropdown*/}
 
-        <div className="grid grid-cols-2 mx-2 lg:m-0">
-          <div className="m-auto text-start pr-24 ">
+        <div className="flex  justify-around pt-10 qs:flex-wrap qs:flex-col-reverse qs:item-center qs:justify-center sm:flex-wrap sm:flex-col-reverse  mx-6 ">
+          <div className="flex flex-col items-center">
             <div className="pb-2">
               <div className="shadow w-60">
                 <div className="text-white bg-primary flex items-center justify-center p-2">
@@ -438,7 +433,7 @@ const Jobslisting = () => {
             </div>
           </div>
 
-          <div className="">
+          <div className="flex flex-col py-4 px-4">
             <div className="py-4">
               <p className="text-xl">0 Jobs Found</p>
               <p className="text-xs text-slate-400 font-bold">
@@ -446,7 +441,7 @@ const Jobslisting = () => {
               </p>
             </div>
 
-            <div className="flex items-center py-4">
+            <div className="flex sm:justify-start  sm: py-2 ">
               <div className="w-58 text-white bg-white flex items-center ">
                 <NavLink className="px-2">
                   <PiArrowsDownUpBold className="text-slate-400 " />
@@ -470,12 +465,12 @@ const Jobslisting = () => {
                 </span>
               </div>
             </div>
-            <p className="text-slate-400 py-4">
+            <p className="text-slate-400 py-4  qs:w-[330px] qs:text-base   ">
               <span className="font-bold text-black">No Record </span>
               Sorry! Does not match record with your keyword Change your filter
               keywords to re-submit OR
             </p>
-            <button className="bg-primary text-white p-1 rounded-sm">
+            <button className="bg-primary w-28 text-white p-1 rounded-sm">
               RESET FILTERS
             </button>
           </div>
