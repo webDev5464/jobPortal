@@ -31,8 +31,8 @@ const SignInSignOut = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex items-end justify-center bg-slate-500 p-10 md:p-20">
-        <h1 className="text-white text-2xl md:text-4xl font-semibold">
+      <div className="flex items-end justify-center bg-slate-500 p-16 md:p-20">
+        <h1 className="text-white text-4xl md:text-4xl font-semibold">
           SignIn / SignUp
         </h1>
       </div>
