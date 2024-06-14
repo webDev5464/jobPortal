@@ -29,7 +29,8 @@ const Jobslisting = () => {
         </div>
 
         {/* searchbar*/}
-        <div className="px-20 qs:px-5 pt-20">
+
+        <div className="px-20  lg:px-5 pt-20">
           <div className="container mx-auto shadow shadow-slate-300 ">
             <div className="flex items-center justify-center w-full py-4 qs:flex-wrap sm:flex-wrap md:flex-wrap">
               <div>
@@ -64,7 +65,7 @@ const Jobslisting = () => {
 
         {/* dropdown*/}
 
-        <div className="flex  justify-around pt-10 qs:flex-wrap qs:flex-col-reverse qs:item-center qs:justify-center sm:flex-wrap sm:flex-col-reverse  mx-6 ">
+        <div className="flex  justify-around pt-10 qs:flex-wrap qs:flex-col-reverse qs:item-center qs:justify-center  lg:px-4   ">
           <div className="flex flex-col items-center">
             <div className="pb-2">
               <div className="shadow w-60">
@@ -433,7 +434,7 @@ const Jobslisting = () => {
             </div>
           </div>
 
-          <div className="flex flex-col py-4 px-4">
+          <div className="flex flex-col py-4 md:px-4 lg:px-4">
             <div className="py-4">
               <p className="text-xl">0 Jobs Found</p>
               <p className="text-xs text-slate-400 font-bold">
@@ -465,7 +466,7 @@ const Jobslisting = () => {
                 </span>
               </div>
             </div>
-            <p className="text-slate-400 py-4  qs:w-[330px] qs:text-base   ">
+            <p className="text-slate-400 py-4  ">
               <span className="font-bold text-black">No Record </span>
               Sorry! Does not match record with your keyword Change your filter
               keywords to re-submit OR

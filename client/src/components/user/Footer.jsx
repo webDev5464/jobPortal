@@ -32,6 +32,7 @@ const Footer = () => {
                 <li className='flex items-center hover:text-yellow-500'>Employers Grid</li>
               </ul>
             </div>
+            
             <div className=''>
               <h3 className='text-white my-3 font-bold text-xl'>For Candidates</h3>
               <ul className='text-[#999999]'>
