@@ -1,3 +1,12 @@
-# Hey developers 👋
+## Working task
 
-This is a live project where our team of developers collaborates to create a website using the MERN stack. If you want to contribute to this project, please contact our team leaders, Deven Sir or Jatin Sir 📞. If you have already contributed to this project, congratulations 🎉! This is an excellent opportunity to develop your skills and gain valuable experience 🚀.
+- kalpesh
+  - mainPage responsive
+- syamal
+  - postNewJob responsive
+- dip
+  - jobListing responsive
+- vijay
+  - admin penal with responsive
+- jatin
+  - login, register and api's handling with bug fixing
