@@ -19,8 +19,6 @@ import { FaBookReader } from "react-icons/fa";
 import { IoFastFood } from "react-icons/io5";
 import { GiHospitalCross } from "react-icons/gi";
 
-
-
 import { FaFacebook, FaSnapchatGhost } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { MdWhatsapp } from "react-icons/md";
@@ -28,9 +26,6 @@ import { MdWhatsapp } from "react-icons/md";
 
 import TestimonialSwiper from './TestimonialSwiper';
 import Footer from '../Footer';
-
-
-
 
 const Mainpage = () => {
     return (
@@ -41,15 +36,15 @@ const Mainpage = () => {
                 <div style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${Hometopimg})` }} id='top-contain' className='bg-center bg-cover  flex flex-col justify-center items-center  h-[500px] gap-10 ' >
                     <h1 className='font-bold text-[45px] text-white'>Aim Higher. Reach Farther. Dream Bigger.</h1>
                     <p className='text-white'>A better career is out there. We'll help you find it. We're your first step to becoming everything you want to be.</p>
-                    <div id='search-bar' className='flex justify-center items-center gap-2'>
+                    <div id='search-bar' className='flex justify-center items-center gap-2 max-[1006]:hidden'>
 
                         <div >
-                            <input className="placeholder:italic placeholder:text-slate-400  bg-white w-[300px] border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm h-[50px] w-[300px]" placeholder="Job Title, Keywords or Phrase" type="text" name="search" />
+                            <input className="placeholder:italic placeholder:text-slate-400  bg-white  border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm h-[50px] w-[300px]" placeholder="Job Title, Keywords or Phrase" type="text" name="search" />
                         </div>
 
-                        <div><input className="placeholder:italic placeholder:text-slate-400  bg-white w-[300px] border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm h-[50px] w-[300px]" placeholder="City, State or ZIP" type="text" name="search" /></div>
+                        <div><input className="placeholder:italic placeholder:text-slate-400   border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm h-[50px] w-[300px]" placeholder="City, State or ZIP" type="text" name="search" /></div>
 
-                        <div><input className="placeholder:italic placeholder:text-slate-400  bg-white w-[300px] border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm h-[50px] w-[300px]" placeholder="Select Sector" type="text" name="search" /></div>
+                        <div><input className="placeholder:italic placeholder:text-slate-400  border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm h-[50px] w-[300px]" placeholder="Select Sector" type="text" name="search" /></div>
 
                         <div className="w-[50px] h-[50px] text-white  border-yellow-600 border-4 rounded-md justify-center flex items-center text-[25px]">{<FaMagnifyingGlass />}</div>
                     </div>
@@ -65,7 +60,6 @@ const Mainpage = () => {
                     <div className='w-[3px] h-[70px] bg-black'></div>
                     <div className='h-[70px] w-[300px] text-4xl flex flex-col justify-center items-center '>140,312 <p className='w-fit text-zinc-400 text-xl '>Positions Matched</p></div>
                 </div>
-
 
                 <div id='icon-list' className='flex flex-col justify-center items-center text-center  h-[680px] border-2 border-zinc-400 bg-white shadow-lg rounded-md'>
                     <h2 className='font-bold text-[25px]'>POPULAR JOB CATEGORIES</h2>
@@ -143,33 +137,28 @@ const Mainpage = () => {
                                 Change your filter keywords to re-submit
                                 OR</p></div>
                         <div className=' flex justify-center items-center'> <div className='bg-red-800 text-white p-2 rounded-md mt-6 w-fit h-[40px]  font-bold cursor-pointer hover:border-[1px] hover:border-red-800 hover:bg-slate-200 hover:text-red-800'>RESET FILTERS</div></div>
-
                     </div>
-
                 </div>
-                <br />
-                <br />
 
-                <div id='swipe-contain' className='h-[500px]  flex justify-evenly mt-[100px]'>
-                    <div className="w-1/3 flex items-center">
+                <div id='swipe-contain' className='h-[500px]  flex justify-evenly mt-[100px] max-[850px]:flex-col '>
+                    <div className="w-1/3 flex items-center  max-[1330px]:w-1/2 max-[850px]:w-full max-[840px]:p-5">
                         <TestimonialSwiper reverse={false} />
                     </div>
 
-                    <div style={{ backgroundImage: `url(${Joy})` }} className='bg-center bg-cover h-full w-1/3 rounded-md '></div>
-                    <div className="w-1/3 flex items-center">
+                    <div style={{ backgroundImage: `url(${Joy})` }} className='bg-center bg-cover h-full w-1/3 rounded-md max-[850px]:w-full '></div>
+                    <div className="w-1/3 flex items-center  max-[1330px]:hidden ">
                         <TestimonialSwiper reverse={true} />
                     </div>
 
                 </div>
 
-
                 <div id='blog-contain' className='bg-white h-[800px] flex flex-col justify-center items-center pt-7 mt-[100px]'>
                     <div className='font-bold text-3xl'>FROM OUR BLOG</div>
                     <p className='text-slate-400 p-2'>A better career is out there. We'll help you find it. We're your first step to becoming everything you want to be.</p>
 
-                    <div className='flex justify-evenly items-center w-full h-[700px] ' >
+                    <div className='flex justify-evenly items-center w-full h-[700px] max-[1070px]:block' >
 
-                        <div className='w-[350px] h-[550px] bg-white flex flex-col  items-center shadow-2xl rounded-md '>
+                        <div className='w-[350px] h-[550px] bg-white flex flex-col  items-center shadow-2xl rounded-md max-[1070px]:w-[100%]'>
                             <div style={{ backgroundImage: `url(${Menbook})` }} className='bg-cover bg-center w-[350px] h-[200px] bg-neutral-50 rounded-md'></div>
                             <div className='p-5'>
                                 <div className='text-red-500 font-bold'>BLOGS</div>
@@ -185,11 +174,11 @@ const Mainpage = () => {
                             </div>
                             <div className='flex justify-center items-center bg-sky-300 text-white p-[10px] font-bold rounded-md w-[310px] border-2  '>READ ARTICLES</div>
                         </div>
-                        <div className='w-[350px] h-[550px] bg-white flex flex-col  items-center shadow-2xl rounded-md '>
+                        <div className='w-[350px] h-[550px] bg-white flex flex-col  items-center shadow-2xl rounded-md   max-[1070px]:w-[100%]'>
                             <div style={{ backgroundImage: `url(${Grouppic})` }} className='bg-cover bg-center w-[350px] h-[200px] bg-neutral-50 rounded-md'  ></div>
                             <div className='p-5'>
                                 <div className='text-red-500 font-bold'>BLOGS</div>
-                                <div className='font-bold text-[20px]'>See his brown b text-[20px]elly, slightly domed and divided...
+                                <div className='font-bold text-[20px]'>See his brown belly, slightly domed and divided...
                                 </div>
                                 <div className='text-sky-500 text-[15px]'>BY ADMIN SEPTEMBER 21, 2024</div>
                                 <p className='text-slate-400 my-2'>His room, a proper human room although a little too small, lay peacefully between its four familiar walls. One morning,…</p>
@@ -217,7 +206,8 @@ const Mainpage = () => {
                                     <div className='rounded-md h-[40px] w-[40px] p-2 flex justify-center items-center bg-blue-700'><span className='text-2xl text-white ' >{<FaFacebook />}</span></div>
                                     <div className='rounded-md h-[40px] w-[40px] p-2 flex justify-center items-center bg-yellow-400'><span className='text-2xl text-white'>{<FaSnapchatGhost />}</span></div>
                                     <div className='rounded-md h-[40px] w-[40px] p-2 flex justify-center items-center bg-[#25D366]'><span className='text-2xl text-white' >{<MdWhatsapp />}</span></div>
-                                    <div className='rounded-md h-[40px] w-[40px] p-2 flex justify-center items-center bg-[#FF0000]'><span className='text-2xl text-white' >{<IoIosMail />}</span></div>                              </div>
+                                    <div className='rounded-md h-[40px] w-[40px] p-2 flex justify-center items-center bg-[#FF0000]'><span className='text-2xl text-white' >{<IoIosMail />}</span></div>
+                                </div>
                             </div>
                             <div className='flex justify-center items-center bg-sky-300 text-white p-[10px] font-bold rounded-md w-[310px] border-2  '>READ ARTICLES</div>
                         </div>
@@ -232,6 +222,7 @@ const Mainpage = () => {
 
 
 
+            <Footer />
         </>
     )
 }
