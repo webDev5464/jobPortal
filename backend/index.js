@@ -41,8 +41,8 @@ app.use((err, req, res, next) => {
 });
 
 // Connect to MongoDB using the provided connection string
-mongodbCon('mongodb+srv://jobPortal:jobPortal@database.ozcdemr.mongodb.net/?retryWrites=true&w=majority&appName=database');
-// mongodbCon('mongodb://127.0.0.1:27017/jatin');
+// mongodbCon('mongodb+srv://jobPortal:jobPortal@database.ozcdemr.mongodb.net/?retryWrites=true&w=majority&appName=database');
+mongodbCon('mongodb://127.0.0.1:27017/jatin');
 
 // Start the server and listen on port 5500
 app.listen(5500, () => console.log('Server is running on port 5500'));

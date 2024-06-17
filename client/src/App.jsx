@@ -25,6 +25,7 @@ import { verifyUser } from "./redux/thunk/authThunks";
 import EmployerListing from "./components/layouts/EmployerListing";
 import Jobslisting from "./components/layouts/Joblisting";
 import Mainpage from "./components/user/mianPage/Mainpage";
+import JobsStyleGrid from "./components/layouts/JobsStyleGrid";
 
 export default function App() {
   const user = useSelector((state) => state.auth);
@@ -50,39 +51,40 @@ export default function App() {
       children: [
         {
           path: "/",
-          element: <Mainpage />,
-          children: [],
-        },
-        {
-          path: "jobs",
-          element: <Jobs />,
-          children: [],
-        },
-
-        {
-          path: "Employer",
-          element: <Employers />,
-          children: [],
-        },
-        {
-          path: "candidate",
-          element: <Candidates />,
-          children: [],
-        },
-        {
-          path: "packages",
-          element: <Packages />,
-          children: [],
-        },
-        {
-          path: "pages",
-          element: <Pages />,
-          children: [],
-        },
-        {
-          path: "",
           element: <UserLayout />,
-          children: [],
+          children: [
+            {
+              path: "",
+              element: <Mainpage />,
+              children: [],
+            },
+            {
+              path: "jobs",
+              element: <Jobs />,
+              children: [],
+            },
+
+            {
+              path: "Employer",
+              element: <Employers />,
+              children: [],
+            },
+            {
+              path: "candidate",
+              element: <Candidates />,
+              children: [],
+            },
+            {
+              path: "packages",
+              element: <Packages />,
+              children: [],
+            },
+            {
+              path: "pages",
+              element: <Pages />,
+              children: [],
+            },
+          ],
         },
         {
           path: "employer",
@@ -105,11 +107,7 @@ export default function App() {
           element: <Loging />,
           children: [],
         },
-        {
-          path: "footer",
-          element: <Footer />,
-          children: [],
-        },
+
 
         {
           path: "employerListing",
@@ -119,6 +117,10 @@ export default function App() {
         {
           path: "jobListing",
           element: <Jobslisting />,
+        },
+        {
+          path: "JobsStyleGrid",
+          element: <JobsStyleGrid />,
         },
       ],
     },
