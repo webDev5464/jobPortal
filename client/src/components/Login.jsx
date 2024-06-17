@@ -9,7 +9,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { CiLinkedin } from "react-icons/ci";
 
-const Login = ({ setLogForm }) => {
+const Login = ({ setLogForm, regForm, setRegForm }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ const Login = ({ setLogForm }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(loginUser({ email, password }));
-    
+
   };
 
   return (
@@ -74,7 +74,7 @@ const Login = ({ setLogForm }) => {
               </div>
               <div>
                 <NavLink className='text-primary hover:underline ' to="/forgot-password">Forgot Password ?<span className="border-r-2 m-1 border-slate-200"></span></NavLink>
-                <NavLink className='text-primary hover:underline ' to="/sign-up">Sign Up</NavLink>
+                <NavLink className='text-primary hover:underline ' onClick={() => { setRegForm(!regForm); setLogForm(false) }}>Sign Up</NavLink>
               </div>
               <div className="flex items-center ">
                 <input type="checkbox" className="w" id="checkbox" />

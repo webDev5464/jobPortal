@@ -1,4 +1,4 @@
-const EmployerReg = () => {
+const EmployerReg = ({ logForm, setLogForm, setRegForm }) => {
     return (
         <>
             <form className="candidateform mt-5 mx-10">
@@ -50,7 +50,7 @@ const EmployerReg = () => {
                         <button className='border px-6 py-2 rounded-3xl md:w-full sm:w-full border-primary bg-primary text-white hover:bg-white hover:text-primary transition-all duration-300'>Sign Up...</button>
                     </div>
                     <div>
-                        <a href="" className='text-primary hover:underline md:text-sm sm:text-sm'>Already have an account? Login</a>
+                        <p className='text-primary md:text-sm sm:text-sm'>Already have an account? <a onClick={() => { { setLogForm(!logForm); setRegForm(false) } }}>Login</a> </p>
                     </div>
                 </div>
             </form>

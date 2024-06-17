@@ -4,6 +4,8 @@ import { FaAngleRight } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 import { PiArrowsDownUpBold } from "react-icons/pi";
 import { NavLink } from "react-router-dom";
+import Footer from "../user/Footer";
+import { IoLogoGoogle } from "react-icons/io";
 
 const JobsStyleGrid = () => {
   return (
@@ -22,44 +24,40 @@ const JobsStyleGrid = () => {
 
         {/* searchbar*/}
 
-        <div className="py-20 w-[100%]">
-          <div className="flex items-center justify-center">
-            <div className="bg-white shadow shadow-slate-300 p-[25px]">
-              <ul className="flex items-center ">
-                <li>
-                  <input
-                    type="text"
-                    className=" p-4 shadow-slate-300 shadow w-72 "
-                    placeholder="Job Title,Keywords ,or Phrase"
-                  />
-                </li>
-                <li>
-                  <input
-                    type="text"
-                    className="p-4 shadow-slate-300 shadow w-72"
-                    placeholder="City,State or ZIP"
-                  />
-                </li>
-                <li>
-                  <input
-                    type="text"
-                    className="p-4 shadow-slate-300 shadow w-72"
-                    placeholder="Select Sector"
-                  />
-                </li>
-                <li>
-                  <div className=" w-[60px] h-[58px] flex items-center justify-center text-white  bg-primary">
-                    <NavLink className="text-2xl">
-                      <BsSearch />
-                    </NavLink>
-                  </div>
-                </li>
-              </ul>
+        <div className="px-20 qs:px-5 pt-20">
+          <div className="container mx-auto shadow shadow-slate-300 ">
+            <div className="flex items-center justify-center w-full py-4 qs:flex-wrap sm:flex-wrap md:flex-wrap">
+              <div>
+                <input
+                  type="text"
+                  className=" p-4 shadow-slate-300 shadow w-72  "
+                  placeholder="Job Title,Keywords ,or Phrase"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  className="p-4 shadow-slate-300 shadow w-72  "
+                  placeholder="City,State or ZIP"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  className="p-4 shadow-slate-300 shadow w-72  "
+                  placeholder="Select Sector"
+                />
+              </div>
+              <div className=" w-[50px] h-[56px]  flex items-center justify-center text-white  bg-primary   md:w-72 ">
+                <NavLink className="text-2xl">
+                  <BsSearch />
+                </NavLink>
+              </div>
             </div>
           </div>
         </div>
-
-        <div className="grid grid-cols-2 ">
+        
+        <div className="grid grid-cols-2 pb-20 ">
           <div className="m-auto">
             <div className="py-4">
               <p className="text-xl">0 Jobs Found</p>
@@ -75,9 +73,9 @@ const JobsStyleGrid = () => {
               Change your filter keywords to re-submit OR
             </p>
             <div className="py-2">
-            <button className="bg-primary text-white p-1 rounded-sm ">
-              RESET FILTERS
-            </button>
+              <button className="bg-primary text-white p-1 rounded-sm ">
+                RESET FILTERS
+              </button>
             </div>
           </div>
 
@@ -109,6 +107,9 @@ const JobsStyleGrid = () => {
           </div>
         </div>
       </div>
+
+   
+      <Footer />
     </>
   );
 };

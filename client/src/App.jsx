@@ -1,31 +1,26 @@
+
+import { useEffect } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { verifyUser } from "./redux/thunk/authThunks";
 import RouterLayout from "./components/layouts/RouterLayout";
 import UserLayout from "./components/layouts/UserLayout";
 import AdminLayout from "./components/layouts/AdminLayout";
 import EmployerLayout from "./components/layouts/EmployerLayout";
-
 import Register from "./components/user/Regitser";
-
 import Loging from "./components/Login";
-import Navbar from "./components/layouts/Navbar";
-import Home from "./components/Home";
 import Employers from "./components/layouts/Employers";
-import Jobs from "./Jobs";
 import Candidates from "./components/layouts/Candidates";
 import Packages from "./components/layouts/Packages";
 import Pages from "./Pages";
-import Footer from "./components/user/Footer";
-// export default function App() {
-
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { verifyUser } from "./redux/thunk/authThunks";
-
-
-import EmployerListing from "./components/layouts/EmployerListing";
-import Jobslisting from "./components/layouts/Joblisting";
+import Home from './components/Home'
+import Jobs from './Jobs'
+import Postingnewjob from './components/user/Postingnewjob'
 import Mainpage from "./components/user/mianPage/Mainpage";
 import JobsStyleGrid from "./components/layouts/JobsStyleGrid";
+import Jobslisting from "./components/layouts/Joblisting";
+import SignInSignOut from "./components/layouts/SignInSignOut";
+
 
 export default function App() {
   const user = useSelector((state) => state.auth);
@@ -51,6 +46,36 @@ export default function App() {
       children: [
         {
           path: "/",
+          element: <Home />,
+          children: [],
+        },
+        {
+          path: "jobs",
+          element: <Jobs />,
+          children: [],
+        },
+        {
+          path: "Employer",
+          element: <Employers />,
+          children: [],
+        },
+        {
+          path: "candidate",
+          element: <Candidates />,
+          children: [],
+        },
+        {
+          path: "packages",
+          element: <Packages />,
+          children: [],
+        },
+        {
+          path: "pages",
+          element: <Pages />,
+          children: [],
+        },
+        {
+          path: "",
           element: <UserLayout />,
           children: [
             {
@@ -105,25 +130,49 @@ export default function App() {
         {
           path: "loging",
           element: <Loging />,
-          children: [],
-        },
+          children: [
 
-
-        {
-          path: "employerListing",
-          element: <EmployerListing />,
-          children: [],
+          ]
         },
         {
-          path: "jobListing",
+          path: 'PostingNewjob',
+          element: <Postingnewjob />,
+          children: [
+
+          ]
+        },
+        {
+          path: 'mainPage',
+          element: <Mainpage />,
+          children: [
+
+          ]
+        },
+        {
+          path: 'jobslisting',
           element: <Jobslisting />,
+          children: [
+
+          ]
         },
         {
-          path: "JobsStyleGrid",
+          path: 'jobsStyleGrid',
           element: <JobsStyleGrid />,
+          children: [
+
+          ]
         },
-      ],
-    },
-  ]);
-  return <RouterProvider router={router} />;
+        {
+          path: 'signinsignout',
+          element: <SignInSignOut />,
+          children: [
+
+          ]
+        }
+      ]
+    }
+  ])
+  return (
+    <RouterProvider router={router} />
+  )
 }

@@ -35,6 +35,7 @@ import Footer from '../Footer';
 const Mainpage = () => {
     return (
         <>
+            <Navbar />
 
             <section>
                 <div style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${Hometopimg})` }} id='top-contain' className='bg-center bg-cover  flex flex-col justify-center items-center  h-[500px] gap-10 ' >

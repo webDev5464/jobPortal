@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from '../../redux/thunk/authThunks';
 
-const CandidateReg = () => {
+const CandidateReg = ({ logForm, setLogForm, setRegForm }) => {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -148,7 +148,7 @@ const CandidateReg = () => {
                     </button>
                 </div>
                 <div>
-                    <a href="" className='text-primary hover:underline md:text-sm sm:text-sm'>Already have an account? Login</a>
+                    <p className='text-primary hover:underline md:text-sm sm:text-sm'>Already have an account? <a className='cursor-pointer' onClick={() => { setRegForm(false); setLogForm(!logForm) }}>Login</a></p>
                 </div>
             </div>
             {error && <p className="mt-4 text-red-500">{error.message}</p>}

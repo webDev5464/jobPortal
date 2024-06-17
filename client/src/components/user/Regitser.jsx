@@ -13,7 +13,7 @@ import { RiUserSharedFill } from "react-icons/ri";
 import CandidateReg from '../layouts/CandidateReg';
 import EmployerReg from '../layouts/EmployerReg';
 
-const Register = ({ setRegForm }) => {
+const Register = ({ setRegForm, logForm, setLogForm }) => {
     let [myActive, setMyActive] = useState('Candidate');
 
     useEffect(() => {
@@ -52,8 +52,8 @@ const Register = ({ setRegForm }) => {
                             </div>
                         </button>
                     </div>
-                    {myActive === 'Candidate' && <CandidateReg />}
-                    {myActive === 'Employer' && <EmployerReg />}
+                    {myActive === 'Candidate' && <CandidateReg logForm={logForm} setRegForm={setRegForm} setLogForm={setLogForm} />}
+                    {myActive === 'Employer' && <EmployerReg setRegForm={setRegForm} logForm={logForm} setLogForm={setLogForm} />}
                 </div>
             </div>
         </div>
