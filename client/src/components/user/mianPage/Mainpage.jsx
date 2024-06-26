@@ -29,36 +29,41 @@ import Footer from '../Footer';
 
 const Mainpage = () => {
     return (
-        <>
-            <Navbar />
+        <div >
+            {/* <Navbar /> */}
 
-            <section>
-                <div style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${Hometopimg})` }} id='top-contain' className='bg-center bg-cover  flex flex-col justify-center items-center  h-[500px] gap-10 ' >
-                    <h1 className='font-bold text-[45px] text-white'>Aim Higher. Reach Farther. Dream Bigger.</h1>
-                    <p className='text-white'>A better career is out there. We'll help you find it. We're your first step to becoming everything you want to be.</p>
-                    <div id='search-bar' className='flex justify-center items-center gap-2 max-[1006]:hidden'>
+            <section >
+                <div style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${Hometopimg})` }} id='top-contain' className='bg-center bg-cover  flex flex-col justify-center items-center  h-[500px] gap-10 max-[780px]:h-[700px]' >
+                    <h1 className='font-bold text-[45px] text-white pl-7 pr-7'>Aim Higher. Reach Farther. Dream Bigger.</h1>
+                    <p className='text-white pl-7 pr-7'>A better career is out there. We'll help you find it. We're your first step to becoming everything you want to be.</p>
+                    <div id='search-bar' className='flex justify-center items-center gap-2 max-[980px]:flex-col max-[980px]:items-start'>
 
                         <div >
                             <input className="placeholder:italic placeholder:text-slate-400  bg-white  border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm h-[50px] w-[300px]" placeholder="Job Title, Keywords or Phrase" type="text" name="search" />
                         </div>
 
+                        <div className='flex max-[980px]:gap-4'>
                         <div><input className="placeholder:italic placeholder:text-slate-400   border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm h-[50px] w-[300px]" placeholder="City, State or ZIP" type="text" name="search" /></div>
+                        <div className='w-[50px] h-[50px] text-white  border-yellow-600 border-4 rounded-md justify-center flex items-center text-[25px] min-[980px]:hidden '>
+                        {<FaMagnifyingGlass />}
+                        </div>
+                        </div>
 
                         <div><input className="placeholder:italic placeholder:text-slate-400  border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm h-[50px] w-[300px]" placeholder="Select Sector" type="text" name="search" /></div>
 
-                        <div className="w-[50px] h-[50px] text-white  border-yellow-600 border-4 rounded-md justify-center flex items-center text-[25px]">{<FaMagnifyingGlass />}</div>
+                        <div className="w-[50px] h-[50px] text-white  border-yellow-600 border-4 rounded-md justify-center flex items-center text-[25px] max-[980px]:hidden ">{<FaMagnifyingGlass />}</div>
                     </div>
-                    <div id='upload-hiring' className='flex justify-center items-center gap-3'>
+                    <div id='upload-hiring' className='flex justify-center items-center gap-3 max-[780px]:flex-col max-[780px]:items-start max-[780px]:pr-[85px]'>
                         <div className='flex  items-center border-2 p-2 rounded-sm text-white border-black bg-black/65'><span className='text-[29px]'>{<FaRegArrowAltCircleUp />}</span><p className='text-xl ml-1'>Upload Your Resume</p></div>
                         <div className='flex  items-center border-2 p-2 rounded-sm text-white border-black bg-black/65 '><span className='text-[30px]'>{<FaBriefcase />}</span ><p className='text-xl ml-1'>Hiring? Post a job for free</p></div>
                     </div>
                 </div>
-                <div id='counting-analyst' className='flex py-4  justify-evenly pr-[80px] '>
-                    <div className='h-[70px] w-[400px] text-4xl  flex flex-col justify-center items-center' >123,012 <p className='w-fit text-zinc-400 text-xl '>Jobs Added</p></div>
-                    <div className='w-[3px] h-[70px] bg-black'></div>
-                    <div className='h-[70px] w-[300px] text-4xl  flex flex-col justify-center mr-5 items-center'>187,432 <p className='w-fit text-zinc-400 text-xl'>Active Resumes</p></div>
-                    <div className='w-[3px] h-[70px] bg-black'></div>
-                    <div className='h-[70px] w-[300px] text-4xl flex flex-col justify-center items-center '>140,312 <p className='w-fit text-zinc-400 text-xl '>Positions Matched</p></div>
+                <div id='counting-analyst' className='flex py-4  justify-evenly pr-[80px] max-[780px]:pr-[0px] '>
+                    <div className='h-[70px] w-[400px] text-4xl  flex flex-col justify-center items-center max-[780px]:w-[300px] max-[660px]:text-3xl max-[660px]:w-fit' >123,012 <p className='w-fit text-zinc-400 text-xl max-[660px]:md'>Jobs Added</p></div>
+                    <div className='w-[3px] h-[70px] bg-black max-[780px]:h-[5px] max-[780px]:w-[15px] max-[780px]:mt-[25px]'></div>
+                    <div className='h-[70px] w-[300px] text-4xl  flex flex-col justify-center mr-5 items-center max-[780px]:mr-0 max-[660px]:text-3xl max-[660px]:w-fit'>187,432 <p className='w-fit text-zinc-400 text-xl max-[660px]:md'>Active Resumes</p></div>
+                    <div className='w-[3px] h-[70px] bg-black max-[780px]:h-[5px] max-[780px]:w-[15px] max-[780px]:mt-[25px]'></div>
+                    <div className='h-[70px] w-[300px] text-4xl flex flex-col justify-center items-center  max-[660px]:text-3xl max-[660px]:w-fit'>140,312 <p className='w-fit text-zinc-400 text-xl max-[660px]:md'>Positions Matched</p></div>
                 </div>
 
                 <div id='icon-list' className='flex flex-col justify-center items-center text-center  h-[680px] border-2 border-zinc-400 bg-white shadow-lg rounded-md'>
@@ -115,15 +120,22 @@ const Mainpage = () => {
                     <div className='bg-white-600 p-2 rounded-md font-bold text-yellow-600 cursor-pointer w-[250px] h-[50px] flex justify-center items-center border-2 hover:bg-yellow-500 hover:text-white duration-[0.6s]'>BROWSE ALL SECTORS</div>
                 </div>
 
-                <div id='search-job-contain' className='flex justify-evenly items-center  h-[600px] p-[50px] '>
-                    <div className='w-fit '>
+                <div id='search-job-contain' className='flex justify-evenly items-center  h-[600px] p-[50px]  max-[600px]:p-[10px]'>
+                    <div className='w-fit max-[960px]:hidden'>
                         <div className='font-bold text-[50px]'>MILLIONS OF JOBS.</div>
                         <div className='font-bold text-[25px]'> FIND THE ONE THAT’S RIGHT FOR YOU.</div>
-                        <p className='w-[500px] mt-3 text-zinc-400 '>Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 600,000 companies worldwide. The right job is out there.</p>
+                        <p className='w-[500px] mt-3 text-zinc-400'>Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 600,000 companies worldwide. The right job is out there.</p>
                         <div className='mt-5 h-[50px] w-[200px] '><div className='bg-orange-400 p-2 rounded-md w-fit  text-white font-bold cursor-pointer hover:border-[1px] hover:border-orange-400 hover:bg-white hover:text-orange-400'>SEARCH JOBS</div></div>
                     </div>
 
-                    <div style={{ backgroundImage: `url(${Serchimg})` }} className='bg-cover bg-center border-orange-400 duration-[0.5s] border-2 hover:border-[15px] shadow-xl rounded-lg h-[400px] w-[500px] '></div>
+                    <div  style={{ backgroundImage: `url(${Serchimg})` }}  className='bg-cover bg-center border-orange-400 duration-[0.5s] border-2 hover:border-[15px] shadow-xl rounded-lg h-[400px] w-[500px] max-[960px]:w-full max-[960px]:hover:border-[2px] max-[960px]:duration-[0s]  max-[500px]:h-[500px]'>
+                    <div className='w-500px p-5 flex flex-col  items-end min-[960px]:hidden max-[960px]:bg-gradient-to-r from-black/[.20] to-black/[.70] max-[960px]:h-[396px] max-[960px]:rounded-lg  max-[500px]:h-[496px]'>
+                        <div className='font-bold text-[50px] text-orange-400  max-[370px]:text-[30px]'>MILLIONS OF JOBS.</div>
+                        <div className='font-bold text-[25px]  text-orange-400  max-[370px]:text-[20px]'> FIND THE ONE THAT’S RIGHT FOR YOU.</div>
+                        <p className=' pt-3 text-zinc-100 indent-[95px]'>Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 600,000 companies worldwide. The right job is out there.</p>
+                        <div className='pt-5 h-[50px] w-[200px] '><div className='bg-orange-400 p-2 rounded-md w-fit  text-white font-bold cursor-pointer hover:border-[1px] hover:border-orange-400 hover:bg-white hover:text-orange-400'>SEARCH JOBS</div></div>
+                    </div>
+                    </div>
                 </div>
 
                 <div id='reset-contain' className='flex flex-col justify-center items-center  h-[400px] bg-slate-200 rounded-lg border-zinc-500 shadow-lg'>
@@ -141,7 +153,7 @@ const Mainpage = () => {
                 </div>
 
                 <div id='swipe-contain' className='h-[500px]  flex justify-evenly mt-[100px] max-[850px]:flex-col '>
-                    <div className="w-1/3 flex items-center  max-[1330px]:w-1/2 max-[850px]:w-full max-[840px]:p-5">
+                    <div className="w-1/3 flex items-center max-[1330px]:w-1/2 max-[850px]:w-full max-[840px]:p-5">
                         <TestimonialSwiper reverse={false} />
                     </div>
 
@@ -156,13 +168,13 @@ const Mainpage = () => {
                     <div className='font-bold text-3xl'>FROM OUR BLOG</div>
                     <p className='text-slate-400 p-2'>A better career is out there. We'll help you find it. We're your first step to becoming everything you want to be.</p>
 
-                    <div className='flex justify-evenly items-center w-full h-[700px] max-[1070px]:block' >
+                    <div className='flex justify-evenly items-center w-full h-[700px] max-[1070px]:block '  >
 
-                        <div className='w-[350px] h-[550px] bg-white flex flex-col  items-center shadow-2xl rounded-md max-[1070px]:w-[100%]'>
+                        <div className='w-[350px] h-[550px] bg-white flex flex-col  items-center shadow-2xl rounded-md max-[1070px]:w-[100%] max-[1070px]:pt-3'>
                             <div style={{ backgroundImage: `url(${Menbook})` }} className='bg-cover bg-center w-[350px] h-[200px] bg-neutral-50 rounded-md'></div>
                             <div className='p-5'>
                                 <div className='text-red-500 font-bold'>BLOGS</div>
-                                <div className='font-bold text-[20px]'>Hhimself transf text-[20px]ormed in his bed into...</div>
+                                <div className='font-bold text-[20px]'>Hhimself formed in his bed into nothing ...</div>
                                 <div className='text-sky-500 text-[15px]'>BY ADMIN SEPTEMBER 21, 2024</div>
                                 <p className='text-slate-400 my-2'>His room, a proper human room although a little too small, lay peacefully between its four familiar walls. One morning,…</p>
                                 <div className='flex gap-5'>
@@ -174,7 +186,7 @@ const Mainpage = () => {
                             </div>
                             <div className='flex justify-center items-center bg-sky-300 text-white p-[10px] font-bold rounded-md w-[310px] border-2  '>READ ARTICLES</div>
                         </div>
-                        <div className='w-[350px] h-[550px] bg-white flex flex-col  items-center shadow-2xl rounded-md   max-[1070px]:w-[100%]'>
+                        <div className='w-[350px] h-[550px] bg-white flex flex-col  items-center shadow-2xl rounded-md   max-[1070px]:w-[100%] max-[1070px]:pt-3'>
                             <div style={{ backgroundImage: `url(${Grouppic})` }} className='bg-cover bg-center w-[350px] h-[200px] bg-neutral-50 rounded-md'  ></div>
                             <div className='p-5'>
                                 <div className='text-red-500 font-bold'>BLOGS</div>
@@ -193,7 +205,7 @@ const Mainpage = () => {
                         </div>
 
 
-                        <div className=' bg-white flex flex-col  items-center shadow-2xl rounded-md  w-[350px] h-[550px]  '>
+                        <div className=' bg-white flex flex-col  items-center shadow-2xl rounded-md  w-[350px] h-[550px]  max-[1070px]:w-[100%] max-[1070px]:pt-3'>
 
                             <div style={{ backgroundImage: `url(${Clock})` }} className='bg-cover bg-center w-[350px] h-[200px] bg-neutral-50 rounded-md'></div>
                             <div className='p-5'>
@@ -222,8 +234,8 @@ const Mainpage = () => {
 
 
 
-            <Footer />
-        </>
+            {/* <Footer /> */}
+        </div>
     )
 }
 
